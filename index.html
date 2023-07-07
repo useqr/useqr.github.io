@@ -142,7 +142,7 @@
 
           qrcode.write(data).make();
 
-          encodeResult.html('<img style="max-width:100%" src="' + qrcode.toDataURL(moduleSize, margin) + '" /><a href="' + qrcode.toDataURL(moduleSize, margin) + '">Download QR Image</a>');
+          encodeResult.html('<img style="max-width:100%" src="' + qrcode.toDataURL(moduleSize, margin) + '" /><a href="' + qrcode.toDataURL(moduleSize, margin) + '" download>Download QR Image</a>');
           encodeResult.removeClass('hide');
 
           console && console.log(qrcode);
