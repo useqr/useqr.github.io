@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
+    	<title>useQR</title>
 	<meta content='width=device-width, initial-scale=1' name='viewport'/>
-    <title>useQR</title>
-	<link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+	<link rel="shortcut icon" type="image/x-icon" href="./i/favicon.ico" />
+	<link rel="apple-touch-icon" sizes="180x180" href="./i/apple-touch-icon.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="./i/favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="./i/favicon-16x16.png" />
+	<link rel="shortcut icon" href="./i/favicon.ico" /> 
+	<meta itemprop="name" content="useQR" />
+	<meta name="msapplication-TileColor" content="#2b5797" />
+	<meta name="theme-color" content="#ffffff" />
   </head>
   <body>
 
-   	<div id="myBar" style="background-color:#0f0;height:24px;width:0"></div> <script> function move() {var elem = document.getElementById("myBar");var width = 1;var id = setInterval(frame, 200);function frame() {if (width >= 100) {clearInterval(id);} else {width++;elem.style.width = width + '%';}}} </script>
+   <div id="myBar" style="background-color:#0f0;height:24px;width:0"></div> <script> function move() {var elem = document.getElementById("myBar");var width = 1;var id = setInterval(frame, 200);function frame() {if (width >= 100) {clearInterval(id);} else {width++;elem.style.width = width + '%';}}} </script>
     <div class="main" style="max-width:100%">
       <ul class="tabs clearfix" style="max-width:100%">
         <li style="max-width:49%" class="selected">Create QR</li>
