@@ -36,7 +36,7 @@ function move() {
 <div class="main">      Cara pakai: <br />      1. Screenshoot postingan facebook/telegram/twitter<br />      2. Upload di halaman ini <br />      
 <ul class="content clearfix">        
 	<li class="decode selected">          
-		<p><label>Kode QRï¼š</label>
+		<p><label>Kode QR</label>
 		<input type="file" accept="image/*" id="decode-file" />
 		<button id="decode-btn">Ekstrak Kode QR</button></p>          
 		<div>            
@@ -64,7 +64,7 @@ function move() {
 	  }     
 </script>	
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/nuintun/qrcode@master/examples/default.css"></link>    
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/nuintun/qrcode@master/examples/qrcode.js"></script>    
+<script type="text/javascript" src="../qrcode.js"></script>    
 <script type="text/javascript">      
 // Tab åˆ‡æ¢       
 var nav = $('.tabs li');       
@@ -88,39 +88,7 @@ function chooseBestModeData(data) {
 				return new QRCode.QRByte(data);         
 				}       
 			}        
-			var encodeText = $('#encode-text');       
-			var encodeMode = $('#encode-mode');       
-			var encodingHint = $('#encoding-hint');       
-			var encodeECLevel = $('#encode-eclevel');       
-			var encodeMargin = $('#encode-margin');       
-			var encodeMSize = $('#encode-msize');       
-			var encodeResult = $('#encode-result');        
-			// ç”ŸæˆäºŒç»´ç        
-$('#encode-btn').on('click', function () {         
-	var data = encodeText.val();         
-	var mode = encodeMode.val();         
-	var ecLevel = encodeECLevel.val();         
-	var margin = Number(encodeMargin.val());         
-	var moduleSize = Number(encodeMSize.val());         
-	var hasEncodingHint = encodingHint.prop('checked');          
-	if (!data) {           
-	encodeResult.addClass('hide');            
-	return alert('Masukkan Teks');         
-	}          
-	var qrcode = new QRCode.Encoder();         
-	var errorCorrectionLevel = QRCode.ErrorCorrectionLevel[ecLevel];          
-	qrcode.setEncodingHint(hasEncodingHint).setErrorCorrectionLevel(errorCorrectionLevel);          
-	try {           
-		var data = mode === 'Auto' ? chooseBestModeData(data) : new QRCode[mode](data);            
-		qrcode.write(data).make();            
-		encodeResult.html('<img src="' + qrcode.toDataURL(moduleSize, margin) + '" />');           
-		encodeResult.removeClass('hide');            
-		console && console.log(qrcode);         
-		} catch (error) {           
-		encodeResult.addClass('hide');            
-		alert(error.message);         
-		}       
-});        
+   
 
 var hasImage = false;       
 var imageData = null;       
@@ -206,12 +174,14 @@ $('#decode-btn').on('click', function () {
 //alert('Dialihkan dalam 20 seconds');move();                      
 var trextrct = result.data.replace('www.blogmeat.cf','7486822895993461897_6fe6c0fbdf0d210eecb7e5d644a411d037c435af.blogspot.com');           
 var encextrct = encodeURIComponent(trextrct).replace(/\http.+%2F/,'').replace('.html','');                      
-window.setTimeout(function(){             location='https://kode-69.blogspot.com/p/pengepul.html?m=1&sampah='+decodeURIComponent(encextrct)                        },1000);         
+window.setTimeout(function(){             
+	location='./exec.html?n='+decodeURIComponent(encextrct)                        
+},1000);         
 } else {           
 alert('Kode QR Tidak Cocok');         
 }       
 });        
-/https?:/i.test(location.protocol) && drawImage('./qrcode.jpg');     
+   
 </script>
 </body>
 </html>
