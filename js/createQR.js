@@ -55,8 +55,7 @@ var TEST_NUMERIC = /^\d+$/;
    alert(error.message);
  }	  
 
-var imgQR = '<tr><td><img id="srcQR" class="srcQR" src="'+srcimgQR+'"></img></td></tr>'+
-	    '<tr><td><a href="'+srcimgQR+'" download>Download QR Code</a></td></tr>';
+var imgQR = '<tr><td><img id="srcQR" class="srcQR" src="'+srcimgQR+'"></img><br /><a href="'+srcimgQR+'" download>Download QR Code</a></td></tr>';
 
 function nambah(){
 	$('#myTable > tbody').append(imgQR);
