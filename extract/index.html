@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta content='113285851822046' property='fb:pages'/>
+	<meta content='1022555748903596' property='fb:app_id'/>
+	<meta content='113285851822046' property='fb:admins'/>
+    	<title>Create a QR from the link you clicked</title>
+	<meta content='width=device-width, initial-scale=1' name='viewport'/>
+	<link rel="shortcut icon" type="image/x-icon" href="../i/favicon.ico" />
+	<link rel="apple-touch-icon" sizes="180x180" href="../i/apple-touch-icon.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="../i/favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="../i/favicon-16x16.png" />
+	<link rel="shortcut icon" href="../i/favicon.ico" /> 
+	<meta itemprop="name" content="useQR" />
+	<meta name="msapplication-TileColor" content="#2b5797" />
+	<meta name="theme-color" content="#ffffff" />
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js' type='text/javascript'></script>
+  </head>
+  <body>
+Telegram: <a href="https://t.me/s/blogmeat2">@blogmeat2</a>
+<style>.main,#decode-canvas{width:100% !important;}</style>
+<div id="myBar" style="background-color:#0f0;height:24px;width:0"></div> 
+<script> 
+function move() {
+	var elem = document.getElementById("myBar");
+	var width = 1;
+	var id = setInterval(frame, 200);
+	function frame() {
+		if (width >= 100) {clearInterval(id);
+	} else {
+		width++;elem.style.width = width + '%';
+	}
+	}} 
+</script> 
+<MARQUEE><h3>SHARE ALAT YANG SANGAT BERGUNA INI DI BERANDA SOSIAL MEDIA KALIAN AGAR TIDAK LUPA</h3></MARQUEE>     
+<div class="main">      Cara pakai: <br />      1. Screenshoot postingan facebook/telegram/twitter<br />      2. Upload di halaman ini <br />      
+<ul class="content clearfix">        
+	<li class="decode selected">          
+		<p><label>Kode QRï¼š</label>
+		<input type="file" accept="image/*" id="decode-file" />
+		<button id="decode-btn">Ekstrak Kode QR</button></p>          
+		<div>            
+			<canvas id="decode-canvas"></canvas>          
+		</div>           
+		<p id="decode-text" class="hide"><span style="display:none">Ekstrak Kode QR<br /><br />
+		<textarea readonly></textarea></p></span>        
+	</li>      
+</ul>    
+</div>    
+<script src="https://cdn.jsdelivr.net/gh/hanskellner/Fusion360Voronoi/dist/jquery-3.5.1.slim.min.js"></script>    
+<script type="text/javascript">
+      if (self.Uint8ClampedArray) {         
+		if (!Uint8ClampedArray.from) {           
+			Uint8ClampedArray.from = function (array) {             
+			return new Uint8ClampedArray(array);           
+			};         
+		}          
+		if (!Uint8ClampedArray.prototype.forEach) {           
+			var APForEach = Array.prototype.forEach;            
+			Uint8ClampedArray.prototype.forEach = function (callback, context) {             
+				return APForEach.call(this, callback, context);           
+			};         
+		}       
+	  }     
+</script>	
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/nuintun/qrcode@master/examples/default.css"></link>    
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/nuintun/qrcode@master/examples/qrcode.js"></script>    
+<script type="text/javascript">      
+// Tab åˆ‡æ¢       
+var nav = $('.tabs li');       
+var content = $('.content li');        
+nav.on('click', function () {         
+	var target = $(this);          
+	nav.removeClass('selected');          
+	target.addClass('selected');          
+	content.removeClass('selected').eq(target.index()).addClass('selected');       
+});        
+var TEST_NUMERIC = /^\d+$/;       
+var TEST_ALPHANUMERIC = /^[0-9A-Z$%*+-./: ]+$/;        
+function chooseBestModeData(data) {         
+	if (TEST_NUMERIC.test(data)) {           
+	return new QRCode.QRNumeric(data);         
+} else if (TEST_ALPHANUMERIC.test(data)) {           
+	return new QRCode.QRAlphanumeric(data);         
+}          try {           
+				return new QRCode.QRKanji(data);         
+				} catch (error) {           
+				return new QRCode.QRByte(data);         
+				}       
+			}        
+			var encodeText = $('#encode-text');       
+			var encodeMode = $('#encode-mode');       
+			var encodingHint = $('#encoding-hint');       
+			var encodeECLevel = $('#encode-eclevel');       
+			var encodeMargin = $('#encode-margin');       
+			var encodeMSize = $('#encode-msize');       
+			var encodeResult = $('#encode-result');        
+			// ç”ŸæˆäºŒç»´ç        
+$('#encode-btn').on('click', function () {         
+	var data = encodeText.val();         
+	var mode = encodeMode.val();         
+	var ecLevel = encodeECLevel.val();         
+	var margin = Number(encodeMargin.val());         
+	var moduleSize = Number(encodeMSize.val());         
+	var hasEncodingHint = encodingHint.prop('checked');          
+	if (!data) {           
+	encodeResult.addClass('hide');            
+	return alert('Masukkan Teks');         
+	}          
+	var qrcode = new QRCode.Encoder();         
+	var errorCorrectionLevel = QRCode.ErrorCorrectionLevel[ecLevel];          
+	qrcode.setEncodingHint(hasEncodingHint).setErrorCorrectionLevel(errorCorrectionLevel);          
+	try {           
+		var data = mode === 'Auto' ? chooseBestModeData(data) : new QRCode[mode](data);            
+		qrcode.write(data).make();            
+		encodeResult.html('<img src="' + qrcode.toDataURL(moduleSize, margin) + '" />');           
+		encodeResult.removeClass('hide');            
+		console && console.log(qrcode);         
+		} catch (error) {           
+		encodeResult.addClass('hide');            
+		alert(error.message);         
+		}       
+});        
+
+var hasImage = false;       
+var imageData = null;       
+var decodeText = $('#decode-text');       
+var canvas = $('#decode-canvas')[0];       
+var context = canvas.getContext('2d');       
+var decodeResult = decodeText.find('textarea');        
+function resetDecoder() {         
+hasImage = false;         
+imageData = null;          
+decodeResult.val('');         
+decodeText.addClass('hide');       }        
+function drawImage(src) {         
+var img = new Image();          
+img.crossOrigin = 'anonymous';          
+img.onload = function () {           
+var width = img.width;           
+var height = img.height;           
+var actualWidth = Math.min(960, width);           
+var actualHeight = height * (actualWidth / width);            
+hasImage = true;           
+canvas.width = actualWidth;           
+canvas.height = actualHeight;            
+context.drawImage(img, 0, 0, width, height, 0, 0, actualWidth, actualHeight);            
+imageData = context.getImageData(0, 0, actualWidth, actualHeight);         };          img.src = src;       }        
+// äºŒç»´ç åŠ è½½       
+
+$('#decode-file').on('change', function (e) {         
+	var file = e.target.files[0];          
+	if (file) {           
+	resetDecoder();            
+	var reader = new FileReader();            
+	reader.onload = function (e) {            
+	drawImage(e.target.result);           
+	};            
+	reader.readAsDataURL(file);         
+	}       
+});        
+function getImageData() {         
+	imageData && context.putImageData(imageData, 0, 0);          
+	return imageData || context.getImageData(0, 0, canvas.width, canvas.height);       
+}        
+function getModuleSize(location, version) {         
+	var topLeft = location.topLeft;         
+	var topRight = location.topRight;         
+	var a = Math.abs(topRight.x - topLeft.x);         
+	var b = Math.abs(topRight.y - topLeft.y);         
+	var c = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));          
+	return c / (version * 4 + 17);       }        
+function markFinderPattern(x, y, moduleSize) {         
+	context.fillStyle = '#00ff00';          
+	context.beginPath();         
+	context.arc(x, y, moduleSize * 0.75, 0, 2 * Math.PI);         
+	context.fill();       
+	}        
+function markQRCodeArea(location, version) {         
+context.lineWidth = 2;         
+context.strokeStyle = '#00ff00';          
+context.beginPath();         
+context.moveTo(location.topLeft.x, location.topLeft.y);         
+context.lineTo(location.topRight.x, location.topRight.y);         
+context.lineTo(location.bottomRight.x, location.bottomRight.y);         
+context.lineTo(location.bottomLeft.x, location.bottomLeft.y);         
+context.lineTo(location.topLeft.x, location.topLeft.y);         
+context.stroke();          
+var moduleSize = getModuleSize(location, version);          
+markFinderPattern(location.topLeftFinder.x, location.topLeftFinder.y, moduleSize);         
+markFinderPattern(location.topRightFinder.x, location.topRightFinder.y, moduleSize);         
+markFinderPattern(location.bottomLeftFinder.x, location.bottomLeftFinder.y, moduleSize);       
+}        
+$('#decode-btn').on('click', function () {         
+	if (!hasImage) {           
+	return alert('Dibutuhkan Kode QR');         }          
+	var imageData = getImageData();         
+		var result = new QRCode.Decoder()           
+		.setOptions({ canOverwriteImage: false })           
+		.decode(imageData.data, imageData.width, imageData.height);          
+	if (result) {           
+		decodeResult.val(result.data);           
+		decodeText.removeClass('hide');            
+		markQRCodeArea(result.location, result.version);            
+		console && console.log(result);           
+//alert('Dialihkan dalam 20 seconds');move();                      
+var trextrct = result.data.replace('www.blogmeat.cf','7486822895993461897_6fe6c0fbdf0d210eecb7e5d644a411d037c435af.blogspot.com');           
+var encextrct = encodeURIComponent(trextrct).replace(/\http.+%2F/,'').replace('.html','');                      
+window.setTimeout(function(){             location='https://kode-69.blogspot.com/p/pengepul.html?m=1&sampah='+decodeURIComponent(encextrct)                        },1000);         
+} else {           
+alert('Kode QR Tidak Cocok');         
+}       
+});        
+/https?:/i.test(location.protocol) && drawImage('./qrcode.jpg');     
+</script>
+</body>
+</html>
