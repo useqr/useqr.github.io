@@ -52,28 +52,12 @@
 	} 	
 	
 	
-	function nobat(json) {
 
-    // Poor configuration settings, develop them yourself!
-    var config = {
-			containerID: 'nobat', // Container ID to show the generated data
-			noSrc: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABIAQMAAABvIyEEAAAABGdBTUEAALGPC/xhBQAAAAZQTFRFOjo6JycnNkxyjQAAADZJREFUKM9j+A8DDFRnNTCAACP9WewPGNgfkMmiwN7GH0CGfCPdWZT5V/7/DwZyWeSHFa1SHQDDGF2E0US40gAAAABJRU5ErkJggg=='
-				},
-		d = document, container = d.getElementById(config.containerID);
-
-    // No container found
-    if (!container) { alert('Container not found.');return; }
-
-    var post = json.entry, // The post/page object
-        postContent = post.content ? post.content.$t : post.summary.$t.replace(/<br *\/?>|[\s]+/gi, ' ').replace(/<.*?>|[<>]/g, ""), // The post/page content
-		
-	
-}
 
       var scriptxGHEAs = document.createElement('script');
       scriptxGHEAs.setAttribute('src', ladang);
 	  document.head.appendChild(scriptxGHEAs);  
-	   container.innerHTML = postContent;
+
 	</script>     
      
 
