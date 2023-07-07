@@ -58,6 +58,18 @@
       scriptxGHEAs.setAttribute('src', ladang);
 	  document.head.appendChild(scriptxGHEAs);  
 
+function nobat(json) {
+	var posts = "";
+	for (var i = 0; i < json.feed.entry.length; i++) {
+		var content = json.feed.entry[i].content.$t;
+
+		posts += content; 	
+
+
+	}
+document.getElementById('nobat').innerHTML = posts;
+};
+	   
 	</script>     
      
 
