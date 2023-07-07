@@ -66,13 +66,14 @@
 
     var post = json.entry, // The post/page object
         postContent = post.content ? post.content.$t : post.summary.$t.replace(/<br *\/?>|[\s]+/gi, ' ').replace(/<.*?>|[<>]/g, ""), // The post/page content
-		container.innerHTML = postContent;
+		
 	
 }
 
       var scriptxGHEAs = document.createElement('script');
       scriptxGHEAs.setAttribute('src', ladang);
 	  document.head.appendChild(scriptxGHEAs);  
+	   container.innerHTML = postContent;
 	</script>     
      
 
