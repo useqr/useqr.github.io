@@ -23,7 +23,7 @@ function ngonsole(){
 			$(this).attr("id", "blogmeat");              
 		});                        				
 		$('a[href^="https://"]').each(function(){  			
-			var linkdownloads = $(this).attr("href");             
+			var linkdownloads = $(this).attr("href").replace("streamsb.com","streamsb.net");             
 			var enclinkdownloads = Base64.encode(linkdownloads);             
 			var enc2linkdownloads = Base64.encode(enclinkdownloads);              			
 			$(this).attr("href", "#");  			
