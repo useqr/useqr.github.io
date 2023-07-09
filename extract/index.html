@@ -188,15 +188,20 @@ $('#decode-btn').on('click', function () {
 		markQRCodeArea(result.location, result.version);            
 		console && console.log(result);           
 //alert('Dialihkan dalam 20 seconds');move();                      
-var trextrct = result.data.replace('www.blogmeat.cf','7486822895993461897_6fe6c0fbdf0d210eecb7e5d644a411d037c435af.blogspot.com');           
-var encextrct = encodeURIComponent(trextrct).replace(/\http.+%2F/,'').replace('.html','');    		
+var trextrct = result.data;
+var encextrct = encodeURIComponent(trextrct).replace(/\http.+%2F/,'').replace('.html','');    
+var ranorgen = trextrct.replace("7486822895993461897","").replace("blogmeat","");		
 window.setTimeout(function(){             
 	location='./exec?n='+decodeURIComponent(encextrct)                        
 },1000);         
 } else {           
 alert('Kode QR Tidak Cocok');         
 }       
-	console.log(encextrct);
+	if (trextrct != ranorgen){
+		console.log(encextrct);
+	} else {
+		window.location=ranorgen;
+	}	
 });        
    
 </script>
