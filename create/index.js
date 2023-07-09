@@ -31,6 +31,7 @@ $(document).ready(function(){
   var uriN = uriS.replace(/http.+#/,"");
   var UriX = Base64.decode(uriN);
   var UriZ = Base64.decode(UriX).replace("www.movieluck.ml","watch.idblog.eu.org").replace("p/stream","index");
+    if(uriD==uriN){window.location="https://useqr.link/#create"}
 
 function myFunction() {   
   var hiburanDnya = '<iframe class="embed-responsive-item" src="';
@@ -45,9 +46,9 @@ function myFunction() {
        document.write(hiburanDnya+UriZ+hiburanBnya+fblik+Lasli+doctit);
       }
       else {
-       alert('Akses Ditolak'); window.location="https://twitter.com/"+userNameTwitter;  return false; 
+       window.location="https://useqr.link/#create";
       }
-     if (uriS == uriN) {window.location="https://twitter.com/"+userNameTwitter; }
+     if (uriS == uriN) {window.location="https://useqr.link/#create"; }
 }
 
 // Lulus Ujian Matematika
