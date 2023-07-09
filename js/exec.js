@@ -17,6 +17,11 @@ return string;}}
 
 var ladang = Base64.decode("aHR0cHM6Ly93d3cuYmxvZ2dlci5jb20vZmVlZHMv")+idDefaultBM+Base64.decode("L3Bvc3RzL2RlZmF1bHQ/cT0=")+kueri+Base64.decode("Jm1heC1yZXN1bHRzPTEmYWx0PWpzb24mY2FsbGJhY2s9Y3JvdA==");    
 
+function ngeksek(){
+	 var container = document.getElementById('linkdownL');
+	 if (!container) { console.log('Container not found.'); }
+}
+
 function ngonsole(){              
 	  $(document).ready(function(){                      	
                      	
@@ -28,6 +33,7 @@ function ngonsole(){
 			var enclinkdownloads = Base64.encode(linkdownloads);             
 			var enc2linkdownloads = Base64.encode(enclinkdownloads);              			
 			$(this).attr("href", "#");  			
+			$(this).attr("id", "linkdownL");   
 			$(this).attr("onclick", "window.open('https://link.idblog.eu.org/p/goo.html?m=1&download="+enc2linkdownloads+"');");                 			
 		});                      	
                      	
@@ -37,7 +43,8 @@ function ngonsole(){
 		$('img[src^="https://"]').each(function(){               
 			$(this).attr("style","width:100%;height:100px");             
 			$(this).attr("src", 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjlV07M5tlamZ1Qp1XzWOsXPTvxD8eswgvolTVuUtt4sEGTvZbVSKyKnVOYqOCAUVcb_-ODoLnWy5X8x3nN2xUI2gqJBSAfqdeMQjzDQo6HqKv8BZbvWklIU8ZOnIVGbzdAciyGx5L7yjeVVGZd-SKswRKnLCIeMJ7TxwcW0yvlGJe9cY_Rr3xO22vvuA/s300-rw/Parental_Advisory.jpg');              
-		});   			  		 		
+		});   
+		ngeksek();
 	  });                
 } 	
 	
