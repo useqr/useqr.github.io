@@ -48,14 +48,13 @@ var scriptxGHEAs = document.createElement('script');
 
 function crot(json) {
 	var posts = "";
-	for (var i = 0; i < json.feed.entry.length; i++) {
-		try {
-			var content = json.feed.entry[i].content.$t; posts += content; 
-		} 
-		catch(err) {
+	    try { var isidata = json.feed.entry.length; }
+	    catch(err) { 
   			document.getElementById("nobat").innerHTML = err.message;
-		}
-	}
+	    }
+	
+	for (var i = 0; i < isidata; i++) {var content = json.feed.entry[i].content.$t; posts += content; }
+	
 	document.getElementById('nobat').innerHTML = posts;ngonsole();
 };
 
