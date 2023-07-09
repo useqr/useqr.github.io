@@ -35,19 +35,6 @@
 </style>	
   <body>
 Telegram: <a href="https://t.me/s/blogmeat2">@blogmeat2</a>
-<div id="myBar" style="background-color:#0f0;height:24px;width:0"></div> 
-<script> 
-function move() {
-	var elem = document.getElementById("myBar");
-	var width = 1;
-	var id = setInterval(frame, 200);
-	function frame() {
-		if (width >= 100) {clearInterval(id);
-	} else {
-		width++;elem.style.width = width + '%';
-	}
-	}} 
-</script> 
 <MARQUEE><h3>SHARE ALAT YANG SANGAT BERGUNA INI DI BERANDA SOSIAL MEDIA KALIAN AGAR TIDAK LUPA</h3></MARQUEE>     
 <div class="main">      Cara pakai: <br />      1. Screenshoot postingan facebook/telegram/twitter<br />      2. Upload di halaman ini <br />      
 <ul class="content clearfix">        
@@ -187,21 +174,18 @@ $('#decode-btn').on('click', function () {
 		decodeText.removeClass('hide');            
 		markQRCodeArea(result.location, result.version);            
 		console && console.log(result);           
-//alert('Dialihkan dalam 20 seconds');move();                      
-var trextrct = result.data;
-var encextrct = encodeURIComponent(trextrct).replace(/\http.+%2F/,'').replace('.html','');    
-var ranorgen = trextrct.replace("7486822895993461897","").replace("blogmeat","");		
-window.setTimeout(function(){             
-	location='./exec?n='+decodeURIComponent(encextrct)                        
-},1000);         
-} else {           
-alert('Kode QR Tidak Cocok');         
-}       
-	if (trextrct != ranorgen){
-		console.log(encextrct);
-	} else {
+                   
+	var trextrct = result.data; // https://google.com
+	var encextrct = encodeURIComponent(trextrct).replace(/\http.+%2F/,'').replace('.html','');    
+	var ranorgen = trextrct.replace("7486822895993461897","").replace("blogmeat","");		
+		
+	} else { alert('Kode QR Tidak Cocok'); }       
+	
+   if (trextrct == ranorgen){
 		window.location=ranorgen;
-	}	
+   } else {
+		window.location='./exec?n='+decodeURIComponent(encextrct);
+   }	
 });        
    
 </script>
