@@ -189,13 +189,14 @@ $('#decode-btn').on('click', function () {
 		console && console.log(result);           
 //alert('Dialihkan dalam 20 seconds');move();                      
 var trextrct = result.data.replace('www.blogmeat.cf','7486822895993461897_6fe6c0fbdf0d210eecb7e5d644a411d037c435af.blogspot.com');           
-var encextrct = encodeURIComponent(trextrct).replace(/\http.+%2F/,'').replace('.html','');                      
+var encextrct = encodeURIComponent(trextrct).replace(/\http.+%2F/,'').replace('.html','');    		
 window.setTimeout(function(){             
-	location='./exec.html?n='+decodeURIComponent(encextrct)                        
+	location='./exec?n='+decodeURIComponent(encextrct)                        
 },1000);         
 } else {           
 alert('Kode QR Tidak Cocok');         
 }       
+	console.log(encextrct);
 });        
    
 </script>
