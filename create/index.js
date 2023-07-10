@@ -53,7 +53,7 @@ function myFunction() {
   var Lasli = '<div style="width:100%;overflow:scroll">Jika video lama dimuat, gunakan tautan ini: <a href="'+UriZ+'" rel="nofollow">'+UriZ+'</a></div>'+
       '<style>body{margin:0px !important}</style>';
       if (konf == akhiran)  {   
-          if (document.cookie.length != 0) { if (ujian < 110) {var nilai = parseInt(ujian) + 1; document.cookie = "username="+nilai;}
+          if (document.cookie.length != 0) { if (ujian < 110) {var nilai = parseInt(ujian) + parseInt("1"); document.cookie = "username="+nilai;}
           } else { document.cookie = "username=101"; }
           var doctit = '<scr' + 'ipt>document.title = "Selamat Nonton ^_^";</scr' + 'ipt>';
           document.write(hiburanDnya+UriZ+hiburanBnya+fblik+Lasli+doctit);
