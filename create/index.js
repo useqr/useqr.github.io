@@ -26,6 +26,13 @@ $(document).ready(function(){
     });
 });    
 
+  var uriD = window.location.href;
+  var uriS = uriD.replace("?m=1","");
+  var uriN = uriS.replace(/http.+#/,"");
+  var UriX = Base64.decode(uriN);
+  var UriZ = Base64.decode(UriX).replace("www.movieluck.ml","watch.idblog.eu.org").replace("p/stream","index");
+    if(uriD==uriN){window.location="https://useqr.link/#create"}
+
 // Lulus Ujian Matematika
 if (document.cookie.length != 0) {
     var array = document.cookie.split("=");
@@ -37,13 +44,6 @@ if (document.cookie.length != 0) {
         window.location=UriZ;
     }
 }
-
-  var uriD = window.location.href;
-  var uriS = uriD.replace("?m=1","");
-  var uriN = uriS.replace(/http.+#/,"");
-  var UriX = Base64.decode(uriN);
-  var UriZ = Base64.decode(UriX).replace("www.movieluck.ml","watch.idblog.eu.org").replace("p/stream","index");
-    if(uriD==uriN){window.location="https://useqr.link/#create"}
 
 function myFunction() {   
   var hiburanDnya = '<iframe class="embed-responsive-item" src="';
