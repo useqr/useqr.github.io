@@ -57,9 +57,9 @@ function myFunction() {
                 if (ujian < 110) {let nilai = ujian + 1;}
           } else {
                 document.cookie = "username=101";
-                var doctit = '<scr' + 'ipt>document.title = "Selamat Nonton ^_^";</scr' + 'ipt>';
-                document.write(hiburanDnya+UriZ+hiburanBnya+fblik+Lasli+doctit);
           }
+          var doctit = '<scr' + 'ipt>document.title = "Selamat Nonton ^_^";</scr' + 'ipt>';
+          document.write(hiburanDnya+UriZ+hiburanBnya+fblik+Lasli+doctit);
       }
       else {
        window.location="https://useqr.link/#create";
