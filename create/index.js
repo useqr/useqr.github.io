@@ -26,6 +26,18 @@ $(document).ready(function(){
     });
 });    
 
+// Lulus Ujian Matematika
+if (document.cookie.length != 0) {
+    var array = document.cookie.split("=");
+    var peserta = array[1];
+    var ujian = encodeURIComponent(peserta).replace(/%3B.+/,"");
+
+    if(ujian=="110"){
+        alert("Anda Sudah Lulus Ujian Matematika");
+        window.location=UriZ;
+    }
+}
+
   var uriD = window.location.href;
   var uriS = uriD.replace("?m=1","");
   var uriN = uriS.replace(/http.+#/,"");
@@ -41,23 +53,16 @@ function myFunction() {
   var Lasli = '<div style="width:100%;overflow:scroll">Jika video lama dimuat, gunakan tautan ini: <a href="'+UriZ+'" rel="nofollow">'+UriZ+'</a></div>'+
       '<style>body{margin:0px !important}</style>';
       if (konf == akhiran)  {   
-        document.cookie = "username=Lulus";
-       var doctit = '<scr' + 'ipt>document.title = "Selamat Nonton ^_^";</scr' + 'ipt>';
-       document.write(hiburanDnya+UriZ+hiburanBnya+fblik+Lasli+doctit);
+          if (document.cookie.length != 0) {
+                if (ujian < 110) {let nilai = ujian + 1;}
+          } else {
+                document.cookie = "username=101";
+                var doctit = '<scr' + 'ipt>document.title = "Selamat Nonton ^_^";</scr' + 'ipt>';
+                document.write(hiburanDnya+UriZ+hiburanBnya+fblik+Lasli+doctit);
+          }
       }
       else {
        window.location="https://useqr.link/#create";
       }
      if (uriS == uriN) {window.location="https://useqr.link/#create"; }
-}
-
-// Lulus Ujian Matematika
-if (document.cookie.length != 0) {
-    var array = document.cookie.split("=");
-    var peserta = array[1];
-    var ujian = encodeURIComponent(peserta).replace(/%3B.+/,"");
-    if(ujian=="Lulus"){
-        alert("Anda Sudah Lulus Ujian Matematika");
-        window.location=UriZ;
-    }
 }
