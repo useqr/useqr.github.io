@@ -28,9 +28,9 @@ $(document).ready(function(){
 
   var uriD = window.location.href;
   var uriS = uriD.replace("?m=1","");
-  var uriN = uriS.replace(/http.+#/,"");
+  var uriN = uriS.replace(/.+#/,"");
   var UriX = Base64.decode(uriN);
-  var UriZ = Base64.decode(UriX).replace("www.movieluck.ml","watch.idblog.eu.org").replace("p/stream","index");
+  var UriZ = Base64.decode(UriX).replace("www.movieluck.ml","watch.idblog.eu.org").replace("p/stream.html","");
     if(uriD==uriN){window.location="https://useqr.link/#create"}
 
 // Lulus Ujian Matematika
@@ -39,7 +39,7 @@ if (document.cookie.length != 0) {
     var peserta = array[1];
     var ujian = encodeURIComponent(peserta).replace(/%3B.+/,"");
 
-    if(ujian=="110"){
+    if(ujian=="3"){
         alert("Anda Sudah Lulus Ujian Matematika");
         window.location=UriZ;
     }
@@ -53,8 +53,8 @@ function myFunction() {
   var Lasli = '<div style="width:100%;overflow:scroll">Jika video lama dimuat, gunakan tautan ini: <a href="'+UriZ+'" rel="nofollow">'+UriZ+'</a></div>'+
       '<style>body{margin:0px !important}</style>';
       if (konf == akhiran)  {   
-          if (document.cookie.length != 0) { if (ujian < 110) {var nilai = parseInt(ujian) + parseInt("1"); document.cookie = "username="+nilai;}
-          } else { document.cookie = "username=101"; }
+          if (document.cookie.length != 0) { if (ujian < 3) {var nilai = parseInt(ujian) + parseInt("1"); document.cookie = "username="+nilai;}
+          } else { document.cookie = "username=1"; }
           var doctit = '<scr' + 'ipt>document.title = "Selamat Nonton ^_^";</scr' + 'ipt>';
           document.write(hiburanDnya+UriZ+hiburanBnya+fblik+Lasli+doctit);
       }
