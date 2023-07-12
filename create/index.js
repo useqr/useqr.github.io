@@ -28,7 +28,11 @@ $(document).ready(function(){
 
   var uriD = window.location.href;
   var uriS = uriD.replace("?m=1","");
+
+if (uriD != uriD.replace("YUhSMGNITTZMeTkzZDNjdWJXOTJhV1ZzZFdOckxtMXNMM0F2YzNSeVpXRnRMbWgwYld3L2JUMHhJeVZ","")){
   var uriN = uriS.replace(/.+#/,"");
+} else { var uriN = uriS.replace(/.+#/,"YUhSMGNITTZMeTkzZDNjdWJXOTJhV1ZzZFdOckxtMXNMM0F2YzNSeVpXRnRMbWgwYld3L2JUMHhJeVZ"); }
+
   var UriX = Base64.decode(uriN);
   var UriZ = Base64.decode(UriX).replace("www.movieluck.ml","watch.idblog.eu.org").replace("p/stream.html","");
     if(uriD==uriN){window.location="https://useqr.link/#create"}
