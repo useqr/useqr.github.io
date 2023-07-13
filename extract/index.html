@@ -36,6 +36,65 @@ iframe { width: 100%; height: 30px;}
 .caranya { margin: 20px; }
 #decode-btn {width: 100%; position: fixed; left: 0px; bottom:0px; font-size: xx-large; padding: 30px 5px;}
 #decode-btn:hover {background-color: azure;}
+.drop-container {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px dashed #555;
+  color: #444;
+  cursor: pointer;
+  transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+
+.drop-container:hover,
+.drop-container.drag-active {
+  background: #eee;
+  border-color: #111;
+}
+
+.drop-container:hover .drop-title,
+.drop-container.drag-active .drop-title {
+  color: #222;
+}
+
+.drop-title {
+  color: #444;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  transition: color .2s ease-in-out;
+}
+
+input[type=file] {
+  width: 350px;
+  max-width: 100%;
+  color: #444;
+  padding: 5px;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #555;
+}
+
+input[type=file]::file-selector-button {
+  margin-right: 20px;
+  border: none;
+  background: #084cdf;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: background .2s ease-in-out;
+}
+
+input[type=file]::file-selector-button:hover {
+  background: #0d45a5;
+}	
 </style>	
   <body>
 
@@ -44,8 +103,11 @@ iframe { width: 100%; height: 30px;}
 <div class="main">      <div class="caranya">Cara pakai: <br />      1. Screenshoot postingan facebook/telegram/twitter<br />      2. Upload di halaman ini <br /> </div>     
 <ul class="content clearfix">        
 	<li class="decode selected">          
-		<p><label>Kode QR</label>
-		<input type="file" accept="image/*" id="decode-file" />
+		<label for="images" class="drop-container" id="dropcontainer">
+  		<span class="drop-title">Drop files here</span>
+  		or
+		<input type="file" accept="image/*" id="decode-file images" />
+		</label>	
 		<button id="decode-btn">Ekstrak Kode QR</button></p>          
 		<div>            
 			<canvas id="decode-canvas"></canvas>          
@@ -57,6 +119,30 @@ iframe { width: 100%; height: 30px;}
 </div>    
 <script src="https://cdn.jsdelivr.net/gh/hanskellner/Fusion360Voronoi/dist/jquery-3.5.1.slim.min.js"></script>    
 <script type="text/javascript">
+
+  const dropContainer = document.getElementById("dropcontainer")
+  const fileInput = document.getElementById("images")
+
+  dropContainer.addEventListener("dragover", (e) => {
+    // prevent default to allow drop
+    e.preventDefault()
+  }, false)
+
+  dropContainer.addEventListener("dragenter", () => {
+    dropContainer.classList.add("drag-active")
+  })
+
+  dropContainer.addEventListener("dragleave", () => {
+    dropContainer.classList.remove("drag-active")
+  })
+
+  dropContainer.addEventListener("drop", (e) => {
+    e.preventDefault()
+    dropContainer.classList.remove("drag-active")
+    fileInput.files = e.dataTransfer.files
+  })
+
+	
       if (self.Uint8ClampedArray) {         
 		if (!Uint8ClampedArray.from) {           
 			Uint8ClampedArray.from = function (array) {             
