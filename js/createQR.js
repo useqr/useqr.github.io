@@ -26,9 +26,16 @@ var TEST_NUMERIC = /^\d+$/;
 		return new QRCode.QRByte(data);
    }
  }
-	  
- var datamentah = window.location.href.replace(/.+#/,""), olahandata = Base64.decode(Base64.decode(datamentah)), data = olahandata.replace("www.movieluck.ml","watch.idblog.eu.org").replace("p/stream","index");
- //var mode = encodeMode.val();
+
+if (window.location.href != window.location.href.replace(/.+jFKWVpVUkNUV1Z/,"")){
+ var datamentah = window.location.href.replace(/.+#/,"");
+} else { var datamentah = window.location.href.replace(/.+#/,"YUhSMGNITTZMeTkzZDNjdWJXOTJhV1ZzZFdOckxtMXNMM0F2YzNSeVpXRnRMbWgwYld3L2JUMHhJeVZ"); }
+
+
+ var	 olahandata = Base64.decode(Base64.decode(datamentah)), 
+	 data = olahandata.replace("www.movieluck.ml","watch.idblog.eu.org").replace("p/stream","index");
+ 
+//var mode = encodeMode.val();
  var mode = 'Auto';
  //var ecLevel = encodeECLevel.val();
  var ecLevel = 'L';
