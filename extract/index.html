@@ -106,7 +106,7 @@ input[type=file]::file-selector-button:hover {
 		<label for="images" class="drop-container" id="dropcontainer">
   		<span class="drop-title">Drop files here</span>
   		or
-		<input type="file" accept="image/*" id="decode-file images" />
+		<input type="file" accept="image/*" id="decode-file" />
 		</label>	
 		<button id="decode-btn">Ekstrak Kode QR</button></p>          
 		<div>            
@@ -121,7 +121,7 @@ input[type=file]::file-selector-button:hover {
 <script type="text/javascript">
 
   const dropContainer = document.getElementById("dropcontainer")
-  const fileInput = document.getElementById("images")
+  const fileInput = document.getElementById("decode-file")
 
   dropContainer.addEventListener("dragover", (e) => {
     // prevent default to allow drop
