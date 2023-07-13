@@ -33,7 +33,7 @@ if (window.location.href != window.location.href.replace(/.+jFKWVpVUkNUV1Z/,""))
 
 
  var	 olahandata = Base64.decode(Base64.decode(datamentah)), 
-	 data = olahandata.replace("www.movieluck.ml","watch.idblog.eu.org").replace("p/stream","index");
+	 data = olahandata.replace("www.movieluck.ml","watch.idblog.eu.org").replace("p/stream.html","");
  
 //var mode = encodeMode.val();
  var mode = 'Auto';
