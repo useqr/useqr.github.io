@@ -157,6 +157,7 @@ input[type=file]::file-selector-button:hover {
 	  }     
 </script>	
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/nuintun/qrcode@master/examples/default.css"></link>    
+<script type="text/javascript" src="../js/base64.js"></script>     
 <script type="text/javascript" src="../qrcode.js"></script>    
 <script type="text/javascript">      
 // Tab åˆ‡æ¢       
@@ -267,8 +268,8 @@ $('#decode-btn').on('click', function () {
                    
 	var trextrct = result.data; // https://google.com
 	var encextrct = encodeURIComponent(trextrct).replace(/\http.+%2F/,'').replace('.html%3F','@').replace('.html','');    
-	var ranorgen = trextrct.replace("7486822895993461897","").replace("blogmeat","");	
-	var partner1 = trextrct.includes("javniru");	
+	var ranorgen = trextrct.replace(Base64.decode("NzQ4NjgyMjg5NTk5MzQ2MTg5Nw=="),"").replace(Base64.decode("YmxvZ21lYXQ="),"");	
+	var partner1 = trextrct.includes(Base64.decode("amF2bmlydQ=="));	
 		
 	} else { alert('Kode QR Tidak Cocok'); }       
 	
