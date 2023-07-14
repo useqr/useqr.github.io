@@ -1,5 +1,12 @@
 var kueri = window.location.href.replace(/.+n=/,''), tanpaparam = window.location.href.replace(/.+xec/,'exec'), nmdmn = window.location.href.replace(/ext.+/,'');  
-var idDefaultBM = '7486822895993461897'; 
+var partner = kueri.includes("@"), idPartner = kueri.replace(/.+@/,''), kueriPartner = kueri.replace(/@.+/,'');
+if (partner == false){
+	var kueriDefault = kueri;
+	var idDefault = '7486822895993461897'; //BM
+} else {
+	var kueriDefault = kueriPartner;
+	var idDefault = idPartner;
+}
 if (kueri == ''){window.location=nmdmn}
 if (tanpaparam == 'exec'){window.location=nmdmn}
 
@@ -15,7 +22,7 @@ else if((c>191)&&(c<224)){c2=utftext.charCodeAt(i+ 1);string+=String.fromCharCod
 else{c2=utftext.charCodeAt(i+ 1);c3=utftext.charCodeAt(i+ 2);string+=String.fromCharCode(((c&15)<<12)|((c2&63)<<6)|(c3&63));i+=3;}}
 return string;}}	   
 
-var ladang = Base64.decode("aHR0cHM6Ly93d3cuYmxvZ2dlci5jb20vZmVlZHMv")+idDefaultBM+Base64.decode("L3Bvc3RzL2RlZmF1bHQ/cT0=")+kueri+Base64.decode("Jm1heC1yZXN1bHRzPTEmYWx0PWpzb24mY2FsbGJhY2s9Y3JvdA==");    
+var ladang = Base64.decode("aHR0cHM6Ly93d3cuYmxvZ2dlci5jb20vZmVlZHMv")+idDefault+Base64.decode("L3Bvc3RzL2RlZmF1bHQ/cT0=")+kueriDefault+Base64.decode("Jm1heC1yZXN1bHRzPTEmYWx0PWpzb24mY2FsbGJhY2s9Y3JvdA==");    
 
 function ngonsole(){              
 	  $(document).ready(function(){                      	
@@ -28,7 +35,12 @@ function ngonsole(){
 			var enclinkdownloads = Base64.encode(linkdownloads);             
 			var enc2linkdownloads = Base64.encode(enclinkdownloads);              			
 			$(this).attr("href", "#");  		
-			$(this).attr("onclick", "window.open('https://link.idblog.eu.org/p/goo.html?m=1&download="+enc2linkdownloads+"');");                 			
+			var partnerLinks = linkdownloads.includes("blogspot");
+			if(partnerLinks == false){
+				$(this).attr("onclick", "window.open('https://link.idblog.eu.org/p/goo.html?m=1&download="+enc2linkdownloads+"');");   
+			} else {
+				$(this).attr("onclick", linkdownloads); 
+			}	
 		});                      	
                      	
 		$('a[id^="blogmeat"]').each(function(){                
