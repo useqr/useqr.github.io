@@ -47,7 +47,7 @@ function ngonsole(){
 			$(this).attr("onclick", "");              
 		});                        	                          
 		$('img[src^="https://"]').each(function(){               
-			$(this).attr("style","width:100%;height:100px");             
+			$(this).attr("style","width:auto !important;height:100px");             
 			$(this).attr("src", 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjlV07M5tlamZ1Qp1XzWOsXPTvxD8eswgvolTVuUtt4sEGTvZbVSKyKnVOYqOCAUVcb_-ODoLnWy5X8x3nN2xUI2gqJBSAfqdeMQjzDQo6HqKv8BZbvWklIU8ZOnIVGbzdAciyGx5L7yjeVVGZd-SKswRKnLCIeMJ7TxwcW0yvlGJe9cY_Rr3xO22vvuA/s300-rw/Parental_Advisory.jpg');              
 		});   
 	  });                
