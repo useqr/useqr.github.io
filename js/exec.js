@@ -35,8 +35,7 @@ function ngonsole(){
 			var enclinkdownloads = Base64.encode(linkdownloads);             
 			var enc2linkdownloads = Base64.encode(enclinkdownloads);              			
 			$(this).attr("href", "#");  		
-			var partnerLinks = linkdownloads.includes("blogspot");
-			if(partnerLinks == false){
+			if (partner == false){
 				$(this).attr("onclick", "window.open('https://link.idblog.eu.org/p/goo.html?m=1&download="+enc2linkdownloads+"');");   
 			} else {
 				$(this).attr("onclick", linkdownloads); 
