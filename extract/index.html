@@ -266,7 +266,7 @@ $('#decode-btn').on('click', function () {
 		console && console.log(result);           
                    
 	var trextrct = result.data; // https://google.com
-	var encextrct = encodeURIComponent(trextrct).replace(/\http.+%2F/,'').replace('.html?','@').replace('.html','');    
+	var encextrct = encodeURIComponent(trextrct).replace(/\http.+%2F/,'').replace('.html%3F','@').replace('.html','');    
 	var ranorgen = trextrct.replace("7486822895993461897","").replace("blogmeat","");	
 	var partner1 = trextrct.includes("javniru");	
 		
