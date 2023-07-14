@@ -34,11 +34,11 @@ function ngonsole(){
 			var linkdownloads = $(this).attr("href").replace("streamsb.com","streamsb.net");             
 			var enclinkdownloads = Base64.encode(linkdownloads);             
 			var enc2linkdownloads = Base64.encode(enclinkdownloads);              			
-			$(this).attr("href", "#");  		
+			$(this).attr("href", "");  		
 			if (partner == false){
 				$(this).attr("onclick", "window.open('https://link.idblog.eu.org/p/goo.html?m=1&download="+enc2linkdownloads+"');");   
 			} else {
-				$(this).attr("onclick", linkdownloads); 
+				$(this).attr("onclick", "window.open('"+linkdownloads+"');"); 
 			}	
 		});                      	
                      	
