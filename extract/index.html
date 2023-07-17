@@ -237,7 +237,9 @@ $('#decode-file').on('change', function (e) {
 	resetDecoder();            
 	var reader = new FileReader();            
 	reader.onload = function (e) {            
-	drawImage(e.target.result);    console.log(e.target.result);       
+	drawImage(e.target.result);    
+		console.log(file);   
+		console.log(e.target.result);       
 	};            
 	reader.readAsDataURL(file);         
 	}       
