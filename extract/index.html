@@ -234,6 +234,17 @@ $('#decode-file').on('change', function (e) {
 	};            
 	reader.readAsDataURL(file);         
 	}       
+}); 
+$('#decode-file').on('drop', function (e) {         
+	var file = e.dataTransfer.files[0];          
+	if (file) {           
+	resetDecoder();            
+	var reader = new FileReader();            
+	reader.onload = function (e) {            
+	drawImage(e.dataTransfer.files);           
+	};            
+	reader.readAsDataURL(file);         
+	}       
 });        
 function getImageData() {         
 	imageData && context.putImageData(imageData, 0, 0);          
