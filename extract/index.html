@@ -236,12 +236,12 @@ $('#decode-file').on('change', function (e) {
 	}       
 }); 
 $('#decode-file').on('drop', function (e) {         
-	var file = e.dataTransfer.files[0];          
+	var file = fileInput.files;          
 	if (file) {           
 	resetDecoder();            
 	var reader = new FileReader();            
 	reader.onload = function (e) {            
-	drawImage(e.dataTransfer.files);           
+	drawImage(file);           
 	};            
 	reader.readAsDataURL(file);         
 	}       
