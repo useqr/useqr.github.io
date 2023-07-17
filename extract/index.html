@@ -241,16 +241,16 @@ $('#decode-file').on('change', function (e) {
 	}       
 }); 
 $('#decode-file').on('drop', function (e) {         
-	var file = e.fileInput.files[0];          
+	var file = e.target.files[0];          
 	if (file) {           
 	resetDecoder();            
 	var reader = new FileReader();            
 	reader.onload = function (e) {            
-	drawImage(e.fileInput.files);           
+	drawImage(e.target.result);           
 	};            
 	reader.readAsDataURL(file);         
 	}       
-});        
+});       
 function getImageData() {         
 	imageData && context.putImageData(imageData, 0, 0);          
 	return imageData || context.getImageData(0, 0, canvas.width, canvas.height);       
