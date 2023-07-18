@@ -22,9 +22,7 @@ let akhiran = awal + sekend;
 $(document).ready(function(){
     $('input[id^="konfirmasi"]').each(function(){  
         $(this).attr("placeholder", ' '+awal+' + '+sekend+' =');  
-        $(this).attr("title", 'Kau IQ Minus Generasi Otak Teler');  
         $(this).attr("inputmode", 'Numeric');  
-        $(this).attr("pattern", '[0-9]{1}');  
     });
     $('div[id^="pertanyaan"]').each(function(){  
         document.getElementById("pertanyaan").innerHTML=' '+awal+' + '+sekend+' =';
