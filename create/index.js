@@ -20,7 +20,7 @@ var awal = Math.floor(Math.random() * 5);
 var sekend = Math.floor(Math.random() * 5);
 let akhiran = awal + sekend;
 
-let newEle = '<form onsubmit="myFunction()"><input id="konfirmasi" type="text" placeholder=" '+awal+' + '+sekend+' =" inputmode="Numeric" /></form>';
+let newEle = '<form onsubmit="myFunction()"><input class="C0d3" id="konfirmasi" type="text" placeholder=" '+awal+' + '+sekend+' =" inputmode="Numeric" /></form>';
 document.getElementById('konfirmasi').outerHTML = newEle;
 
 $(document).ready(function(){
