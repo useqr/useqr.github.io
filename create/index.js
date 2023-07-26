@@ -19,11 +19,11 @@ return string;}}
 var awal = Math.floor(Math.random() * 5);
 var sekend = Math.floor(Math.random() * 5);
 let akhiran = awal + sekend;
+
+let newEle = '<form onsubmit="myFunction()"><input id="konfirmasi" type="text" placeholder=" '+awal+' + '+sekend+' =" inputmode="Numeric" /></form>';
+document.getElementById('konfirmasi').outerHTML = newEle;
+
 $(document).ready(function(){
-    $('input[id^="konfirmasi"]').each(function(){  
-        $(this).attr("placeholder", ' '+awal+' + '+sekend+' =');  
-        $(this).attr("inputmode", 'Numeric');  
-    });
     $('div[id^="pertanyaan"]').each(function(){  
         document.getElementById("pertanyaan").innerHTML=' '+awal+' + '+sekend+' =';
     });
