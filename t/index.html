@@ -33,11 +33,18 @@
   <body>
     <div>
       T.CO QR Code
+	    <div id="post"></div>
     </div>
     <script>
 	var urlasli = window.location.href;
 	var data = urlasli.replace(/.+co?=/,"").replace("-l","").split("-");
 	console.log(data);
+	var posts = "<ul id='datapost'>";   
+	for (var i = 0; i < data.length; i++) {   
+	var hasil  = "<li><a href='https://t.co/"+data[i]+"'>https://t.co/"+data[i]+"</a></li>";
+	posts += hasil;	
+	}
+	document.getElementById('post').innerHTML = posts;
     </script>	  
   </body>
 </html>
