@@ -34,5 +34,10 @@
     <div>
       T.CO QR Code
     </div>
+    <script>
+	var urlasli = window.location.href;
+	var data = urlasli.replace(/.+co?=/,"").replace("-l","").split("-");
+	console.log(data);
+    </script>	  
   </body>
 </html>
