@@ -37,7 +37,8 @@
     </div>
     <script>
 	var urlasli = window.location.href;
-	var data = urlasli.replace(/.+co?=/,"").replace("-l","").split("-");
+	var akh = urlasli.slice(-1); if (akh == "-") {window.location="/404"}
+	var data = urlasli.replace(/.+co?=/,"").split("-");
 	console.log(data);
 	var posts = "<ul id='datapost'>";   
 	for (var i = 0; i < data.length; i++) {   
