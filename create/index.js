@@ -44,6 +44,7 @@ if (uriD != uriD.replace(/.+jFKWVpVUkNUV1Z/,"")){
 if (document.cookie.length != 0) {
     var array = document.cookie.split("=");
     var peserta = array[1];
+                                                                        console.log(peserta);
     var ujian = encodeURIComponent(peserta).replace(/%3B.+/,"");
 
     if(ujian=="3"){
