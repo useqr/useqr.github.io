@@ -44,10 +44,9 @@ if (uriD != uriD.replace(/.+jFKWVpVUkNUV1Z/,"")){
 if (document.cookie.length != 0) {
     var array = document.cookie.split("=");
     var peserta = array[1];
-                                                                        console.log(peserta);
     var ujian = encodeURIComponent(peserta).replace(/%3B.+/,"");
 
-    if(ujian=="3"){
+    if(ujian=="Lolos"){
         alert("Anda Sudah Lulus Ujian Matematika");
         window.location=UriZ;
     }
@@ -61,8 +60,7 @@ function myFunction() {
   var Lasli = '<div style="width:100%;overflow:scroll">Jika video lama dimuat, gunakan tautan ini: <a href="'+UriZ+'" rel="nofollow">'+UriZ+'</a></div>'+
       '<style>body{margin:0px !important}</style>';
       if (konf == akhiran)  {   
-          if (document.cookie.length != 0) { if (ujian < 3) {var nilai = parseInt(ujian) + parseInt("1"); document.cookie = "username="+nilai;}
-          } else { document.cookie = "username=1"; }
+          document.cookie = "username=Lolos"; 
           var doctit = '<scr' + 'ipt>document.title = "Selamat Nonton ^_^";</scr' + 'ipt>';
           document.write(hiburanDnya+UriZ+hiburanBnya+fblik+Lasli+doctit);
       }
