@@ -11,7 +11,6 @@
 	<link rel="icon" type="image/png" sizes="32x32" href="../i/favicon-32x32.png" />
 	<link rel="icon" type="image/png" sizes="16x16" href="../i/favicon-16x16.png" />
 	<link rel="shortcut icon" href="../i/favicon.ico" /> 
-	<link rel="stylesheet" type="text/css" href="../default.css" />
 	<meta name="title" content="Tool - UseQR" />
 	<meta name="description" content="Tool a QR Code" />
 	<meta property="og:type" content="website" />
@@ -37,34 +36,17 @@
 	    <div id="post"></div>
     </div>
     <script>
-	    
-var TEST_NUMERIC = /^\d+$/;
- var TEST_ALPHANUMERIC = /^[0-9A-Z$%*+-./: ]+$/;
- 
- function chooseBestModeData(data) {
-   if (TEST_NUMERIC.test(data)) {
-		return new QRCode.QRNumeric(data);
-   } else if (TEST_ALPHANUMERIC.test(data)) {
-		return new QRCode.QRAlphanumeric(data);
-   }
-
-   try {
-		return new QRCode.QRKanji(data);
-   } catch (error) {
-		return new QRCode.QRByte(data);
-   }
- }
-
-
-
-
-
+var TEST_NUMERIC = /^\d+$/, TEST_ALPHANUMERIC = /^[0-9A-Z$%*+-./: ]+$/;
+function chooseBestModeData(data) {
+   if (TEST_NUMERIC.test(data)) { return new QRCode.QRNumeric(data); } else if (TEST_ALPHANUMERIC.test(data)) { return new QRCode.QRAlphanumeric(data); }
+   try { return new QRCode.QRKanji(data); } catch (error) { return new QRCode.QRByte(data); }
+}
 	    
 	var urlasli = window.location.href;
 	var akh = urlasli.slice(-1); if (akh == "-") {window.location="/404"}
 	var dataUrl = urlasli.replace(/.+co?=/,"").split("-");
 	console.log(dataUrl);
-	var posts = '<ul id="datapost">';   
+	var posts = '';   
 	for (var i = 0; i < dataUrl.length; i++) {   
 	var tcoUrl = 'https://t.co/'+dataUrl[i];
 
@@ -78,12 +60,13 @@ var TEST_NUMERIC = /^\d+$/;
 	qrcode.write(data).make();
 	var srcimgQR = qrcode.toDataURL(moduleSize, margin); //console.log(srcimgQR);
  } catch (error) { alert(error.message); }	  
-var imgQR = '<img id="srcQR" class="srcQR" src="'+srcimgQR+'"></img>';
+ var imgQR = '<img id="srcQR" class="srcQR" src="'+srcimgQR+'"></img>';
 	
-	var hasil  = '<li>'+imgQR+'Part '+(i+1)+' <a href="'+tcoUrl+'">'+tcoUrl+'</a></li>';	
+	var hasil  = '<tr><td>'+imgQR+'</td><td>Part '+(i+1)+' <a href="'+tcoUrl+'">'+tcoUrl+'</a></td></tr>';	
 	posts += hasil;	
 	}
-	document.getElementById('post').innerHTML = posts;
+	var postresult = '<table class="tableresult">'+posts+'</table>';
+	document.getElementById('post').innerHTML = postresult;
 	    
     </script>	  
   </body>
