@@ -30,4 +30,6 @@ function chooseBestModeData(data) {
 	posts += hasil;	
 	}
 	var postresult = '<table class="tableresult">'+posts+'</table>';
+	if (urlasli != takde) {
 	document.getElementById('post').innerHTML = postresult;
+	} else {window.location="/404";}
