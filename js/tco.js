@@ -4,7 +4,7 @@ function chooseBestModeData(data) {
    try { return new QRCode.QRKanji(data); } catch (error) { return new QRCode.QRByte(data); }
 }
 	    
-	var urlasli = window.location.href;
+	var urlasli = window.location.href.replace(/?fbclid=.+/,'');
 	var akh = urlasli.slice(-1); if (akh == "-") {window.location="/404"}
 	var dataUrl = urlasli.replace(/.+co?=/,"").split("-");
 	console.log(dataUrl);
