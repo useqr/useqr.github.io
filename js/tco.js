@@ -6,6 +6,7 @@ function chooseBestModeData(data) {
 	    
 	var urlasli = window.location.href.replace('?fbclid=','@').replace(/@.+/,'');
 	var kosong = urlasli.replace(/co?=.+/,"co?="); if (urlasli == kosong) {window.location="/404"}
+	var takde = kosong.replace('co?=',''); if (urlasli == takde) {window.location="/404"}
 	var akh = urlasli.slice(-1); if (akh == "-") {window.location="/404"}
 	var dataUrl = urlasli.replace(/.+co?=/,"").split("-");
 	console.log(dataUrl);
