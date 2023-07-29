@@ -17,6 +17,9 @@ a {
 a:visited {
     color: #000;
 }
+a:visited:active {
+    color: #11ee11;
+}
 #post {
     max-width:418px;
     margin: auto;
