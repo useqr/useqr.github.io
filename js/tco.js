@@ -26,7 +26,7 @@ function chooseBestModeData(data) {
  } catch (error) { alert(error.message); }	  
  var imgQR = '<img id="srcQR" class="srcQR" src="'+srcimgQR+'"></img>';
 	
-	var hasil  = '<tr><td><a href="'+tcoUrl+'">'+imgQR+'</a></td><td>Part '+(i+1)+' <a href="'+tcoUrl+'">'+tcoUrl+'</a></td></tr>';	
+	var hasil  = '<tr><td>'+imgQR+'</td><td>Part '+(i+1)+' <a href="'+tcoUrl+'">'+tcoUrl+'</a></td></tr>';	
 	posts += hasil;	
 	}
 	var postresult = '<table class="tableresult">'+posts+'</table>';
