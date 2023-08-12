@@ -47,7 +47,7 @@ if (document.cookie.length != 0) {
     var ujian = encodeURIComponent(peserta).replace(/%3B.+/,"");
 
     if(ujian=="Lolos"){
-        alert("Anda Sudah Lulus Ujian Matematika");
+    //    alert("Anda Sudah Lulus Ujian Matematika");
         window.location=UriZ;
     }
 }
