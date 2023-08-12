@@ -69,3 +69,5 @@ function myFunction() {
       }
      if (uriS == uriN) {window.location="https://useqr.link/#create"; }
 }
+
+var jquery = document.createElement('script');	jquery.setAttribute('src', './jquery.js');	document.head.appendChild(jquery);  
