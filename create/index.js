@@ -65,7 +65,7 @@ function myFunction() {
           document.write(hiburanDnya+UriZ+hiburanBnya+fblik+Lasli+doctit);
       }
       else {
-       window.location="https://useqr.link/#create";
+       alert('Jawabannya '+akhiran);
       }
      if (uriS == uriN) {window.location="https://useqr.link/#create"; }
 }
