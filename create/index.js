@@ -36,7 +36,7 @@ $(document).ready(function(){
   var uriN = uriS.replace(/.+#/,"");
 
 
-  var UriZ = Base64.decode(uriN).replace("www.movieluck.ml","watch.idblog.eu.org").replace("p/stream.html","");
+  var UriZ = "https://watch.idblog.eu.org/v2/?m=1#"+Base64.decode(uriN);
     if(uriD==uriN){window.location="https://useqr.link/#create"}
 
 // Lulus Ujian Matematika
