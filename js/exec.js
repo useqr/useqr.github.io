@@ -37,7 +37,7 @@ function ngonsole(){
 			$(this).attr("style","margin:auto !important");    
 			$(this).attr("href", "#");  		
 			if (partner == false){
-				$(this).attr("onclick", "window.open('https://link.idblog.eu.org/p/goo.html?m=1&download="+enc2linkdownloads+"');");   
+				$(this).attr("onclick", "window.open('https://watch.idblog.eu.org/p/go.html?m=1&download="+enc2linkdownloads+"');");   
 			} else {
 				$(this).attr("onclick", "window.open('"+linkdownloads+"');"); 
 			}	
