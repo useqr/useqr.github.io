@@ -4,7 +4,9 @@ if (uriD != uriN){window.location="../create/00"+path+"#"+uriN;}
 else {
   if (uriD.includes('link/t/-')  == true){window.location=uriD.replace('link/t/-','link/t/'+onepath+'?co=');}else{ 
     if (uriD.includes('link/-')  == true){window.location=uriD.replace('link/-','link/t/'+onepath+'?co=');}else{ 
-    document.title="Page has been deleted";
+      if (uriD.includes('link/+')  == true){window.location=uriD.replace('link/+','link/dsq/'+onepath+'?qs=');}else{
+        document.title="Page has been deleted";
+      }
     }
   }
 }
