@@ -12,7 +12,7 @@ function chooseBestModeData(data) {
 	console.log(dataUrl);
 	var posts = '';   
 	for (var i = 0; i < dataUrl.length; i++) {   
-	var tcoUrl = 'http://disq.us/t/'+dataUrl[i];
+	var tcoUrl = 'https://disq.us/t/'+dataUrl[i];
 
  var data = tcoUrl;
  var mode = 'Auto'; var ecLevel = 'L'; var margin = '5'; var moduleSize = '8'; var hasEncodingHint = false;
