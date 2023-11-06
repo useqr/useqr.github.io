@@ -5,8 +5,10 @@ else {
   if (uriD.includes('link/t/-')  == true){window.location=uriD.replace('link/t/-','link/t/'+onepath+'?co=');}else{ 
     if (uriD.includes('link/-')  == true){window.location=uriD.replace('link/-','link/t/'+onepath+'?co=');}else{ 
       if (uriD.includes('link/+')  == true){window.location=uriD.replace('link/+','link/dsq/'+onepath+'?qs=');}else{
-        if (uriD.includes('link/bit-')  == true){window.location=uriD.replace('link/bit-','link/b/'+onepath+'?ly=');}else{
-          document.title="Page has been deleted";
+        if (uriD.includes('link/%20')  == true){window.location=uriD.replace('link/%20','link/dsq/'+onepath+'?qs=');}else{
+          if (uriD.includes('link/bit-')  == true){window.location=uriD.replace('link/bit-','link/b/'+onepath+'?ly=');}else{
+            document.title="Page has been deleted";
+          }
         }
       }
     }
