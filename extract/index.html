@@ -305,12 +305,13 @@ $('#decode-btn').on('click', function () {
 	var trextrct = result.data; // https://google.com
 	var encextrct = encodeURIComponent(trextrct).replace(/\http.+%2F/,'').replace('.html%3F','@').replace('.html','');    
 	var ranorgen = trextrct.replace(Base64.decode("NzQ4NjgyMjg5NTk5MzQ2MTg5Nw=="),"").replace(Base64.decode("YmxvZ21lYXQ="),"");	
-	var partner1 = trextrct.includes(Base64.decode("amF2bmlydQ=="));	
+	var partner1 = trextrct.includes(Base64.decode("amF2bmlydQ=="));		
+	var partner2 = trextrct.includes(Base64.decode("bmlpaGVu"));	
 		
 	} else { alert('Kode QR Tidak Cocok'); }       
 	
    if (trextrct == ranorgen){
-	   if (partner1 == true){window.location='./exec?n='+decodeURIComponent(encextrct);} 
+	   if (partner1 == true || partner2 == true){window.location='./exec?n='+decodeURIComponent(encextrct);} 
 	   else {window.location=ranorgen;}
    } else {
 		window.location='./exec?n='+decodeURIComponent(encextrct);
