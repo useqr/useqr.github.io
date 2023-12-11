@@ -39,7 +39,7 @@ function ngonsole(){
 			if (partner == false){
 				$(this).attr("onclick", "window.open('https://watch.idblog.eu.org/p/go.html?m=1&download="+enc2linkdownloads+"');");   
 			} else {
-				$(this).attr("onclick", "window.open('"+linkdownloads+"');"); 
+				$(this).attr("onclick", "window.open('https://watch.idblog.eu.org/p/go.html?m=1&download="+enc2linkdownloads+"');");   //"window.open('"+linkdownloads+"');"); 
 			}	
 		});                      	
                      	
