@@ -68,9 +68,9 @@ fetch(apiUrl).then((t => {
     if (!t.ok) throw new Error(`HTTP error! Status: ${t.status}`);
     return t.json()
 })).then((t => {
-	var isi = decodeURIComponent(t.konten);
-	//document.getElementById("nobat").innerHTML = `${isi}`;
- alert(isi);  
+	const isi = t.konten;
+	resultContainer.innerHTML = `${isi}`;
+  
 })).catch((t => {
     window.location=window.location.protocol+'//'+window.location.hostname+'/';
 })); 
