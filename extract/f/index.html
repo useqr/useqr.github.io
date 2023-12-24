@@ -69,7 +69,7 @@ fetch(apiUrl).then((t => {
     return t.json()
 })).then((t => {
 	var isi = t.konten;
- alert(decodeURIComponent(isi));  
+ alert(isi);  
 })).catch((t => {
     window.location=window.location.protocol+'//'+window.location.hostname+'/';
 })); 
