@@ -54,14 +54,14 @@
   }
 }
   </style>	
-  <body>
+<body>
 <div class="imprtn">Note: Jika di pojok kiri atas ada simbol silang <span class="simsil">&#215;</span>. Itu menandakan masih terhubung dengan apk/app.</div>
 <div class="imprtn">Sehingga mengakibatkan link download tidak dapat diakses dengan lancar. Oleh karena itu perlu dikeluarkan dari apk/app dengan cara:</div>
 <div class="imprtn">Tekan titik tiga <span class="sim3ttk">&#65049;</span> di pojok kanan atas, kemudian pilih "Buka di chrome/ Buka di browser sistem".</div>
 <div id="nobat">        
 <div style="width:100%;height:50px;background-image:url(https://lh4.googleusercontent.com/-9p1SdZRNU30/VmPfSLq56vI/AAAAAAAAANY/_hdOnv_fWJ8/s1600/downloaddas.gif)"></div>      
 </div>    
-<table><tbody></tbody></table>	  
+<center><table><tbody></tbody></table></center>  
 <script>
 
 const IdCode = window.location.href.replace(/ht.+de=/,"").replace("#","").replace(/\&fbclid.+/,"").toUpperCase();  
@@ -112,40 +112,21 @@ var TEST_NUMERIC = /^\d+$/;
    }
  }
 	  
- var data = window.location.href;
- //var mode = encodeMode.val();
- var mode = 'Auto';
- //var ecLevel = encodeECLevel.val();
- var ecLevel = 'L';
- //var margin = Number(encodeMargin.val());
- var margin = '5';
- //var moduleSize = Number(encodeMSize.val());
- var moduleSize = '8';
- //var hasEncodingHint = encodingHint.prop('checked');
- var hasEncodingHint = false;
-
+ var data = `${DoHost}?code=${IdCode}`, mode = 'Auto', ecLevel = 'L', margin = '5', moduleSize = '8', hasEncodingHint = false;
  var qrcode = new QRCode.Encoder();
  var errorCorrectionLevel = QRCode.ErrorCorrectionLevel[ecLevel];
-
  qrcode.setEncodingHint(hasEncodingHint).setErrorCorrectionLevel(errorCorrectionLevel);
-
  try {
 	var data = mode === 'Auto' ? chooseBestModeData(data) : new QRCode[mode](data);
-
 	qrcode.write(data).make();
-
 	var srcimgQR = qrcode.toDataURL(moduleSize, margin); 
-   
  } catch (error) {
    alert(error.message);
  }	  
-
 var imgQR = '<tr><td><img id="srcQR" class="srcQR" src="'+srcimgQR+'"></img></td></tr>';
-
 function nambah(){
 	$('#myTable > tbody').append(imgQR);
 } 
-
 $(document).ready(function(){          
 	$('table').each(function(){ 
             $(this).attr("id", "myTable"); 
@@ -154,5 +135,5 @@ $(document).ready(function(){
  }); 
 </script>   
 
-  </body>
+</body>
 </html>
