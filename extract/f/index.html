@@ -74,8 +74,7 @@ $(document).ready(function() {
             url: apiUrl, dataType: 'json',
             success: function(data) {olahData(data)},
             error: function(xhr, status, error) {
-                console.error(status + ': ' + error);
-                $('#nobat').text('Error fetching JSON data.');
+                window.location=window.location.protocol+'//'+window.location.hostname+'/';
             }
         });
 });
