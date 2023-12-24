@@ -68,13 +68,12 @@ fetch(apiUrl).then((t => {
     if (!t.ok) throw new Error(`HTTP error! Status: ${t.status}`);
     return t.json()
 })).then((t => {
-	const isi = t.konten;
+	const isi = decodeURIComponent(t.konten);
 	resultContainer.innerHTML = `${isi}`;
   
 })).catch((t => {
     window.location=window.location.protocol+'//'+window.location.hostname+'/';
 })); 
-console.log(`${isi}`);
   
 </script>   
     
