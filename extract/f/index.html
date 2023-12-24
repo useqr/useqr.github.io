@@ -62,19 +62,25 @@
 
 const IdCode = window.location.href.replace(/ht.+de=/,"").replace("#","").replace(/\&fbclid.+/,"").toUpperCase();  
 const DoHost = window.location.protocol+'//'+window.location.hostname+window.location.pathname;
-const apiUrl = `${DoHost}/${IdCode}.json`,
-    resultContainer = document.getElementById("nobat");
-fetch(apiUrl).then((t => {
-    if (!t.ok) throw new Error(`HTTP error! Status: ${t.status}`);
-    return t.json()
-})).then((t => {
-	const isi = t.konten;
-	resultContainer.innerHTML = decodeURIComponent(isi);
-  
-})).catch((t => {
-    //window.location=window.location.protocol+'//'+window.location.hostname+'/';
-})); 
-  
+const apiUrl = `${DoHost}/${IdCode}.json`, resultContainer = document.getElementById("nobat");
+
+function olahData(data){
+ 	var isi = data.konten;
+	resultContainer.innerHTML = isi;	
+}
+	
+$(document).ready(function() {
+        $.ajax({
+            url: apiUrl, dataType: 'json',
+            success: function(data) {olahData(data)},
+            error: function(xhr, status, error) {
+                console.error(status + ': ' + error);
+                $('#nobat').text('Error fetching JSON data.');
+            }
+        });
+});
+
+	
 </script>   
     
   </body>
