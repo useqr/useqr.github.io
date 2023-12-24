@@ -1,0 +1,33 @@
+body {
+    background-color: #eee;
+}
+#nobat {
+    margin: 5% 10%;
+    border: 10px solid #d9d9d9;
+    padding: 3%;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    background-color: azure;
+}
+
+.simsil, .sim3ttk {
+    color: red;
+    border: 1px solid red;
+    padding: 0px 5px;
+    border-radius: 50%;
+}
+
+.imprtn {
+    text-align: justify;
+    color: orange;
+    background-color: cornsilk;
+    margin: 0px;
+    padding: 10px;
+    position: sticky;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    border-radius: 5px;
+}
+@media screen and (min-width: 480px) {
+  .imprtn {
+    display:none;
+  }
+}
