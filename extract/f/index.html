@@ -5,11 +5,11 @@
 	<meta content='113285851822046' property='fb:admins'/>
     	<title>useQR</title>
 	<meta content='width=device-width, initial-scale=1' name='viewport'/>
-	<link rel="shortcut icon" type="image/x-icon" href="../i/favicon.ico" />
-	<link rel="apple-touch-icon" sizes="180x180" href="../i/apple-touch-icon.png" />
-	<link rel="icon" type="image/png" sizes="32x32" href="../i/favicon-32x32.png" />
-	<link rel="icon" type="image/png" sizes="16x16" href="../i/favicon-16x16.png" />
-	<link rel="shortcut icon" href="../i/favicon.ico" /> 
+	<link rel="shortcut icon" type="image/x-icon" href="../../i/favicon.ico" />
+	<link rel="apple-touch-icon" sizes="180x180" href="../../i/apple-touch-icon.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="../../i/favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="../../i/favicon-16x16.png" />
+	<link rel="shortcut icon" href="../../i/favicon.ico" /> 
 	<meta itemprop="name" content="useQR" />
 	<meta name="msapplication-TileColor" content="#2b5797" />
 	<meta name="theme-color" content="#ffffff" />
@@ -69,7 +69,7 @@ fetch(apiUrl).then((t => {
     return t.json()
 })).then((t => {
 	var isi = t.konten;
-  console.log(isi);  
+  document.write(decodeURIComponent(isi));  
 })).catch((t => {
     window.location=window.location.protocol+'//'+window.location.hostname+'/';
 })); 
