@@ -308,5 +308,20 @@
       /https?:/i.test(location.protocol) && drawImage('./download.gif');
     </script>
 
+<div id="RsltContnr" ></div>
+<script>
+function getPosts(json) {
+	var posts = "";
+	for (var i = 0; i < json.feed.entry.length; i++) {
+		var title = json.feed.entry[i].title.$t,
+			id = json.feed.entry[i].id.$t,
+			thumb = json.feed.entry[i].media$thumbnail.url.replace("s72-c","w640-h360-c-rw").replace("/default","/hqdefault").replace(/=s72.+/,"=w640-h360-c-rw");
+			posts += `<div class="lps1"><div class="lps2"><a href="blog?article=${id.replace('tag:blogger.com,1999:blog-8044667158793505808.post-','')}"><img src="${thumb}"/><br />${i+1} ${title} </a></div></div>`;
+	}
+document.getElementById('RsltContnr').innerHTML = posts;
+};
+</script>
+<script src="https://www.blogger.com/feeds/8044667158793505808/posts/default?alt=json-in-script&max-results=30&callback=getPosts"></script>
+	  
   </body>
 </html>
