@@ -32,9 +32,9 @@
 <script>
 var artcl = window.location.href.replace(/.+cle=/,"");
 function getPosts(json) {
-		var title = JSON.entry.title.$t,
-			categ = JSON.entry.category[0].term,
-			cnten = JSON.entry.content.$t,
+		var title = json.entry.title.$t,
+			categ = json.entry.category[0].term,
+			cnten = json.entry.content.$t,
 			posts = `<h3>${title}</h3>${categ}<hr/>${cnten}`;
 document.getElementById('RsltContnr').innerHTML = posts;
 };
