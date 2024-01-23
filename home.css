@@ -145,3 +145,8 @@ button:hover {
   font-size: 14px; /* Adjust the font size */
   color: #666; /* Adjust the text color */
 }
+@media screen and (max-width: 480px) {
+    .lps1 {
+        flex: unset;
+    }
+}
