@@ -51,9 +51,35 @@ h3 {
     padding: 20px;
     border-left: 5px solid #007bff;
 }
+.leftSide {
+  width: 300px;
+  height: 100vh;
+  background-color: #f0f0f0;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+#RsltContnr {
+  width: calc(100% - 600px);
+  height: 100vh;
+  background-color: #e0e0e0;
+  margin: 0 300px;
+}
+
+.rightSide {
+  width: 300px;
+  height: 100vh;
+  background-color: #d0d0d0;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
 	
 </style>	  
+<div class="leftSide"></div>
 <div id="RsltContnr" ></div>
+<div class="rightSide"></div>	  
 <script>
 var artcl = window.location.href.replace(/.+cle=/,"");
 function getPosts(json) {
