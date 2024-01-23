@@ -68,6 +68,8 @@ h3 {
 @media screen and (min-width: 480px)	{
   body {
           margin:50px;
+	  filter: blur(5px);
+	  background-size: cover;
   }	
   #RsltContnr div {
 	  margin:0 20%;
@@ -88,7 +90,7 @@ function getPosts(json) {
 		var title = json.entry.title.$t,
 			categ = json.entry.category[0].term,
 			cnten = json.entry.content.$t,
-			bgpos = json.entry.media$thumbnail.url,
+			bgpos = json.entry.media$thumbnail.url.replace("s72-c","s0-rw").replace("/default","/hqdefault").replace(/=s72.+/,"=s0-rw");,
 			posts = `<h3>${title}</h3>${categ}<hr/>${cnten}`;
 document.getElementById('RsltContnr').innerHTML = posts;
 document.title=title;
