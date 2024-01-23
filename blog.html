@@ -39,7 +39,7 @@ function getPosts(json) {
 document.getElementById('RsltContnr').innerHTML = posts;
 };
 var scriptElement = document.createElement('script');
-scriptElement.src = `https://www.blogger.com/feeds/8044667158793505808/posts/default${artcl}?alt=json-in-script&max-results=30&callback=getPosts`;
+scriptElement.src = `https://www.blogger.com/feeds/8044667158793505808/posts/default/${artcl}?alt=json-in-script&callback=getPosts`;
 document.head.appendChild(scriptElement);
 </script>
   </body>
