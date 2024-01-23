@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta content='113285851822046' property='fb:pages'/>
+	<meta content='1022555748903596' property='fb:app_id'/>
+	<meta content='113285851822046' property='fb:admins'/>
+    	<title>Blog Article</title>
+	<meta content='width=device-width, initial-scale=1' name='viewport'/>
+	<link rel="shortcut icon" type="image/x-icon" href="./i/favicon.ico" />
+	<link rel="apple-touch-icon" sizes="180x180" href="./i/apple-touch-icon.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="./i/favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="./i/favicon-16x16.png" />
+	<link rel="shortcut icon" href="./i/favicon.ico" /> 
+	<meta name="title" content="useQR" />
+  	<meta name="description" content="Create and Extract a QR Code" />
+  	<meta property="og:type" content="website" />
+  	<meta property="og:url" content="https://useqr.link/" />
+  	<meta property="og:title" content="useQR" />
+  	<meta property="og:description" content="Blog Article" />
+  	<meta property="og:image" content="https://useqr.link/i/1200x628.jpg" />
+  	<meta property="twitter:card" content="summary_large_image" />
+  	<meta property="twitter:url" content="https://useqr.link/" />
+  	<meta property="twitter:title" content="useQR" />
+  	<meta property="twitter:description" content="Blog Article" />
+  	<meta property="twitter:image" content="https://useqr.link/i/1200x628.jpg" />
+	<meta itemprop="name" content="useQR" />
+	<meta name="msapplication-TileColor" content="#2b5797" />
+	<meta name="theme-color" content="#ffffff" />
+  </head>
+  <body>
+<div id="RsltContnr" ></div>
+<script>
+var artcl = window.location.href.replace(/.+cle=/,"");
+function getPosts(json) {
+		var title = JSON.entry.title.$t,
+			categ = JSON.entry.category[0].term,
+			cnten = JSON.entry.content.$t,
+			posts = `<h3>${title}</h3>${categ}<hr/>${cnten}`;
+document.getElementById('RsltContnr').innerHTML = posts;
+};
+var scriptElement = document.createElement('script');
+scriptElement.src = `https://www.blogger.com/feeds/8044667158793505808/posts/default${artcl}?alt=json-in-script&max-results=30&callback=getPosts`;
+document.head.appendChild(scriptElement);
+</script>
+  </body>
+</html>
