@@ -166,9 +166,11 @@
 
           encodeResult.html(
 		'<img style="max-width:100%" src="' + qrcode.toDataURL(moduleSize, margin) + '" /> <br />' +
-		'<a href="' + qrcode.toDataURL(moduleSize, margin) + '" download>Download QR Image</a>' +
+		'<a id="downloadLink" href="#" download="image.gif">Download QR Image</a>' +
+		
 		'<scr'+'ipt>' +
-		decodeURIComponent('var%20base64Data%3D%22%22%2Cblob%3DdataURItoBlob(base64Data)%2CdownloadLink%3Ddocument.getElementById(%22downloadLink%22)%3Bfunction%20dataURItoBlob(a)%7Bfor(var%20e%3Datob(a.split(%22%2C%22)%5B1%5D)%2Ct%3Dnew%20ArrayBuffer(e.length)%2Co%3Dnew%20Uint8Array(t)%2Cn%3D0%3Bn%3Ce.length%3Bn%2B%2B)o%5Bn%5D%3De.charCodeAt(n)%3Breturn%20new%20Blob(%5Bt%5D%2C%7Btype%3A%22image%2Fgif%22%7D)%7DdownloadLink.href%3Dwindow.URL.createObjectURL(blob)%3B') +
+		' var base64Data = "' + qrcode.toDataURL(moduleSize, margin) + '"' +
+		decodeURIComponent('var%20blob%3DdataURItoBlob(base64Data)%2CdownloadLink%3Ddocument.getElementById(%22downloadLink%22)%3Bfunction%20dataURItoBlob(a)%7Bfor(var%20e%3Datob(a.split(%22%2C%22)%5B1%5D)%2Ct%3Dnew%20ArrayBuffer(e.length)%2Co%3Dnew%20Uint8Array(t)%2Cn%3D0%3Bn%3Ce.length%3Bn%2B%2B)o%5Bn%5D%3De.charCodeAt(n)%3Breturn%20new%20Blob(%5Bt%5D%2C%7Btype%3A%22image%2Fgif%22%7D)%7DdownloadLink.href%3Dwindow.URL.createObjectURL(blob)%3B') +
 		'</scr'+'ipt>'
 	  );
           encodeResult.removeClass('hide');
