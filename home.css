@@ -108,3 +108,40 @@ button:hover {
     border-radius: 5px;
 }
 .canvsdv {text-align:center}
+
+#RsltContnr {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.lps1 {
+  flex: 0 0 calc(33.33% - 20px);
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+.lps2 {
+  text-align: center;
+}
+
+.lps2 a {
+  text-decoration: none; /* Remove underline from links */
+  color: #333; /* Set text color */
+  display: block; /* Make the entire link area clickable */
+  padding: 10px; /* Add padding for better clickability */
+}
+
+.lps2 a:hover {
+  background-color: #f0f0f0; /* Change background color on hover */
+}
+
+.lps2 img {
+  max-width: 100%;
+}
+
+/* Additional styling for the text */
+.lps2 p {
+  margin: 5px 0; /* Add margin to paragraphs inside .lps2 */
+  font-size: 14px; /* Adjust the font size */
+  color: #666; /* Adjust the text color */
+}
