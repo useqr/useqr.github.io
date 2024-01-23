@@ -95,3 +95,14 @@ button:hover {
 .content li.selected {
   display: block;
 }
+
+#downloadLink {
+    width: 100%;
+    display: block;
+    margin: 20px auto;
+    border: 1px solid #45a049;
+    padding: 15px 0px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+}
