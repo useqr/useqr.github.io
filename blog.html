@@ -66,6 +66,9 @@ h3 {
   text-align:justify;
 }
 @media screen and (min-width: 480px)	{
+  body {
+          margin:50px;
+  }	
   #RsltContnr div {
 	  margin:0 20%;
   }
@@ -85,9 +88,12 @@ function getPosts(json) {
 		var title = json.entry.title.$t,
 			categ = json.entry.category[0].term,
 			cnten = json.entry.content.$t,
+			bgpos = json.entry.media$thumbnail.url,
 			posts = `<h3>${title}</h3>${categ}<hr/>${cnten}`;
 document.getElementById('RsltContnr').innerHTML = posts;
 document.title=title;
+document.body.style.backgroundImage = `url("${bgpos}")`;
+
 };
 var scriptElement = document.createElement('script');
 scriptElement.src = `https://www.blogger.com/feeds/8044667158793505808/posts/default/${artcl}?alt=json-in-script&callback=getPosts`;
