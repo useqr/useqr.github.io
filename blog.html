@@ -84,6 +84,9 @@ h3 {
 <div id="RsltContnr" ></div>
 <div class="rightSide"></div>	  
 <script>
+function gAnalytics() {
+	!function(){function a(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],a("js",new Date);var n=document.createElement("script");n.async=!0,n.src="https://www.googletagmanager.com/gtag/js?id=G-G4QKJ6KM3L",n.onload=function(){a("config","G-G4QKJ6KM3L")},document.head.appendChild(n)}();
+}
 function getPosts(json) {
 	var 	title = json.entry.title.$t,
 		categ = json.entry.category[0].term,
@@ -91,11 +94,9 @@ function getPosts(json) {
 		bgpos = json.entry.media$thumbnail.url.replace("s72-c","s0-rw").replace("/default","/hqdefault").replace(/=s72.+/,"=s0-rw"),
 		posts = `<h3>${title}</h3>${categ}<hr/>${cnten}`;
 	document.getElementById('RsltContnr').innerHTML = posts;document.title=title;document.body.style.backgroundImage = `url("${bgpos}")`;
+	gAnalytics();
 };
 var scriptElement = document.createElement('script');scriptElement.src = `https://www.blogger.com/feeds/8044667158793505808/posts/default/${window.location.href.replace(/.+cle=/,"")}?alt=json-in-script&callback=getPosts`;document.head.appendChild(scriptElement);
-document.addEventListener("DOMContentLoaded", function() {
-	!function(){function a(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],a("js",new Date);var n=document.createElement("script");n.async=!0,n.src="https://www.googletagmanager.com/gtag/js?id=G-G4QKJ6KM3L",n.onload=function(){a("config","G-G4QKJ6KM3L")},document.head.appendChild(n)}();
-});
 </script>
   </body>
 </html>
