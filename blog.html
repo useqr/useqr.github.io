@@ -106,7 +106,7 @@ function getPosts(json) {
 	var 	title = json.entry.title.$t,
 		categ = json.entry.category[0].term,
 		cnten = json.entry.content.$t,
-		bgpos = json.entry.media$thumbnail.url.replace("s72-c","s0-rw").replace("/default","/hqdefault").replace(/=s72.+/,"=s0-rw"),
+		bgpos = json.entry.media$thumbnail.url.replace("s72-c","w1500-h1400-n").replace("/default","/hqdefault").replace(/=s72.+/,"=w1500-h1400-n"),
 		posts = `<h3>${title}</h3>${categ}<hr/>${cnten}`;
 	document.getElementById('RsltContnr').innerHTML = posts;document.title=title;document.body.style.backgroundImage = `url("${bgpos}")`;
 	gAnalytics();
