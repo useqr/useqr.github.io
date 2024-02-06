@@ -11,7 +11,17 @@ function ngonsole(){
 			$(this).attr("style","margin:auto !important");    
 			$(this).attr("href", "#");  		
 			$(this).attr("onclick", "window.open('https://watch.idblog.eu.org/p/go.html?m=1&download="+enc2linkdownloads+"');");	
-		});                      	
+		});     
+		
+            	var brTag = document.querySelector('br');
+            	var aTag = document.createElement('a');
+            	aTag.setAttribute('href', `https://watch.idblog.eu.org/v5/?code=${IdCode}`);
+		aTag.setAttribute('class', 'LN');  
+            	aTag.innerHTML = 'NONTON';
+            	
+            	if (brTag) {
+                	brTag.parentNode.replaceChild(aTag, brTag);
+            	}
 	  });                
 } 		
 function olahData(dataitem){
