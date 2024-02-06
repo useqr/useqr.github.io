@@ -327,5 +327,20 @@ document.getElementById('RsltContnr').innerHTML = posts;
 };
 </script>
 <script src="https://www.blogger.com/feeds/8044667158793505808/posts/default?alt=json-in-script&max-results=30&callback=getPosts"></script>
+
+<script src='https://cdn.fluidplayer.com/v3/current/fluidplayer.min.js'></script>
+<video muted='' controls='' id='sponsored-video' style='width: 100%; max-width: 300px; height: 250px'>
+	<source src='https://lh3.googleusercontent.com/-nXikm-ogjmw/ULyGzo-LlRI/AAAAAAAAAVE/VGv9yy9mtzQ/s200-rh/loading.gif' type='video/mp4'></source>
+</video>
+<script>
+var myFP = fluidPlayer('sponsored-video',{layoutControls:{primaryColor:false,playButtonShowing:true,playPauseAnimation:true,fillToContainer:false,autoPlay:true,preload:false,mute:true,doubleclickFullscreen:true,subtitlesEnabled:	false,keyboardControl:true,layout:'default',allowDownload:false,playbackRateEnabled:true,allowTheatre:true,title:'Advertisement',loop:true,logo: {imageUrl:null,imageMargin:'5px',position:'top right',clickUrl:null,opacity:1},controlBar: {autoHide:true, autoHideTimeout:	3, animated:true}, timelinePreview:	{},htmlOnPauseBlock: {html:null,height:null, width:null }, playerInitCallback:(function() {console.log('player loaded!')}) },
+vastOptions: {"adList": [{"roll": "preRoll","vastTag": "https://hobowhema.com/dImVF.zedrGSNpv-ZgGmUo/HeKmX9GuhZJUTlLkWPfTTUoxRNjznUA5/MsTGgVt/NnTCEz3vNeT/kQxlO/SKZTsHaZWe1/pkdLD/0Jxz"}],
+	vastAdvanced: {
+		vastLoadedCallback: (function() {var spvid = document.getElementById('fluid_video_wrapper_sponsored-video');spvid.style = 'display:unset;width:100%;max-width:300px;height:250px;position:fixed;bottom:0px;left:0px'}),
+        	vastVideoSkippedCallback: (function() {var spvid = document.getElementById('fluid_video_wrapper_sponsored-video');spvid.style ='display:none'}),
+        	vastVideoEndedCallback: (function() {var spvid = document.getElementById('fluid_video_wrapper_sponsored-video');spvid.style = 'display:none'})
+    	}
+}});
+</script> 	  
   </body>
 </html>
