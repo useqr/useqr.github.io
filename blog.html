@@ -109,6 +109,14 @@ iframe {
 function gAnalytics() {
 	!function(){function a(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],a("js",new Date);var n=document.createElement("script");n.async=!0,n.src="https://www.googletagmanager.com/gtag/js?id=G-G4QKJ6KM3L",n.onload=function(){a("config","G-G4QKJ6KM3L")},document.head.appendChild(n)}();
 }
+function ngonsole(){              
+	  $(document).ready(function(){                      				
+		$('a[href^="http://www"]').each(function(){  			        			
+			$(this).attr("style","display:none !important");    
+			$(this).attr("href", "#");  			
+		});     
+	  });                
+} 	
 function getPosts(json) {
 	var 	title = json.entry.title.$t,
 		categ = json.entry.category[0].term,
@@ -116,7 +124,7 @@ function getPosts(json) {
 		bgpos = json.entry.media$thumbnail.url.replace("s72-c","w1920-h1080-n-rw").replace("/default","/hqdefault").replace(/=s72.+/,"=w1920-h1080-n-rw"),
 		posts = `<h3>${title}</h3>${categ}<hr/>${cnten}`;
 	document.getElementById('RsltContnr').innerHTML = posts;document.title=title;document.body.style.backgroundImage = `url("${bgpos}")`;
-	gAnalytics();
+	gAnalytics(); ngonsole();
 };
 var scriptElement = document.createElement('script');scriptElement.src = `https://www.blogger.com/feeds/8044667158793505808/posts/default/${window.location.href.replace(/.+cle=/,"")}?alt=json-in-script&callback=getPosts`;document.head.appendChild(scriptElement);
 </script>	  
