@@ -113,7 +113,8 @@ function ngonsole(){
 	  $(document).ready(function(){                      				
 		$('a[href^="http://www"]').each(function(){  			        			   
 			$(this).removeAttr('href');  	
-			$(this).text(window.location.host);
+			var $newSpan = $('<span>');$newSpan.text(window.location.host);
+			$(this).replaceWith($newSpan);
 		});     
 	  });                
 } 	
