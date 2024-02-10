@@ -111,9 +111,9 @@ function gAnalytics() {
 }
 function ngonsole(){              
 	  $(document).ready(function(){                      				
-		$('a[href^="http://www"]').each(function(){  			        			
-			$(this).attr("style","display:none !important");    
-			$(this).attr("href", "#");  			
+		$('a[href^="http://www"]').each(function(){  			        			   
+			$(this).attr("href", "#");  	
+			$(this).text(window.location.host);
 		});     
 	  });                
 } 	
