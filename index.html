@@ -340,16 +340,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         visitCount = parseInt(visitCount);
         if (visitCount < 3) {
-            var script = document.createElement("script");
-            script.async = true;
-            script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9471561819758039";
-            script.crossOrigin = "anonymous";
-            document.body.appendChild(script);
+            var script = document.createElement("script"); script.async = true; script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9471561819758039"; script.crossOrigin = "anonymous"; document.body.appendChild(script);
         } else {
-			$('#HLLTPADS').append('<scr'+'ipt>'+
-			decodeURIComponent(`(function(jzcsi)%7B%0Avar%20d%20%3D%20document%2C%0A%20%20%20%20s%20%3D%20d.createElement('script')%2C%0A%20%20%20%20l%20%3D%20d.scripts%5Bd.scripts.length%20-%201%5D%3B%0As.settings%20%3D%20jzcsi%20%7C%7C%20%7B%7D%3B%0As.src%20%3D%20%22%5C%2F%5C%2Fpeskycrash.com%5C%2Fb.XoVzs%5C%2Fd%5C%2FGPld0%5C%2FYSWRdOikYjWw5KuVZjXgIT%5C%2FueRmN9kuwZhULlik%5C%2FPlTdUTxNNZzQMT5%5C%2FNRjxgWt_NpTSEQ3cMOzfkz2oO%5C%2FQL%22%3B%0As.async%20%3D%20true%3B%0Al.parentNode.insertBefore(s%2C%20l)%3B%0A%7D)(%7B%7D)`)+
-			'</scr'+'ipt>');
-		}
+	    !function(e){var t=document,r=t.createElement("script"),s=t.scripts[t.scripts.length-1];r.settings={}||{},r.src="//descriptive-monitor.com/b/XFVYs_d.GTl/0FYZWcdjiTYmW/5auQZIXyIN/neFm/9yuYZQUMlrkpPZTyU/x/N/zmMu5gN/jBggtPNiTsEr3/M/zukX2kOXQN",r.async=!0,s.parentNode.insertBefore(r,s)}();
+	}
         visitCount++;
         setCookie("visitCount", visitCount);
     }
