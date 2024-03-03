@@ -37,6 +37,23 @@ body {
     background-attachment: fixed;
     background-position: center; 
 }
+.navigation {
+    background-color: #45a049;
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+.navigation a {
+    margin: auto;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid;
+    padding: 10px;
+    border-radius: 5px;
+}
+.navigation a:hover {
+    background-color: #000;
+}	
 #RsltContnr img {
     width:100%;
     margin: 0px;
@@ -146,6 +163,11 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 	</script>
 </div>	  
+<nav class="navigation">
+	<a href="/">HOMEPAGE</a> 
+	<a href="/terms">Terms Of Service</a> 
+	<a href="/about">About</a>
+</nav>	  
 <div class="main">	  
 <div id="leftSide"></div>	  
 <div id="RsltContnr" ></div>
