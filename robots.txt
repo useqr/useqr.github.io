@@ -21,3 +21,10 @@ Allow: /
 
 User-agent: *
 Disallow: /
+Disallow: /extract/exec
+Disallow: /extract/f/
+Disallow: /v/
+Disallow: /prm-
+Disallow: /v-
+Disallow: /t/
+Disallow: /b/
