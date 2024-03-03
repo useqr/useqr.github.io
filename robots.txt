@@ -1,26 +1,4 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Alexabot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Slurp
-Allow: /
-
-User-agent: DuckDuckBot
-Allow: /
-
-User-agent: Baiduspider
-Allow: /
-
-User-agent: YandexBot
-Allow: /
-
 User-agent: *
-Disallow: /
 Disallow: /extract/exec
 Disallow: /extract/f/
 Disallow: /v/
