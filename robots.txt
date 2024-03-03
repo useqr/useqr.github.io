@@ -1,8 +1,12 @@
 User-agent: *
 Disallow: /extract/exec
 Disallow: /extract/f/
+Disallow: /b/
+Disallow: /dsq/
+Disallow: /t/
 Disallow: /v/
+Disallow: /+
+Disallow: /-
+Disallow: /bit-
 Disallow: /prm-
 Disallow: /v-
-Disallow: /t/
-Disallow: /b/
