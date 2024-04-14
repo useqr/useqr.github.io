@@ -5,7 +5,7 @@ const apiUrl = `https://cdn.jsdelivr.net/gh/useqr/d@master/${IdCode}.json`, resu
 function ngonsole(){              
 	  $(document).ready(function(){                      				
 		$('a[href^="https://"]').each(function(){  			
-			var linkdownloads = $(this).attr("href");             
+			var linkdownloads = $(this).attr("href").replace("streamtape.com","tapelovesads.org");             
 			var enclinkdownloads = Base64.encode(linkdownloads);             
 			var enc2linkdownloads = Base64.encode(enclinkdownloads);              			
 			$(this).attr("style","margin:auto !important");    
