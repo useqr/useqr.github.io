@@ -10,3 +10,6 @@ Disallow: /-
 Disallow: /bit-
 Disallow: /prm-
 Disallow: /v-
+
+User-agent: facebookexternalhit
+Allow: /v-
