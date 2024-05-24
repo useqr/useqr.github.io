@@ -14,7 +14,7 @@ function chooseBestModeData(data) {
 	console.log(dataUrl);
 	var posts = '';   
 	for (var i = 0; i < dataUrl.length; i++) {   
-	var tcoUrl = 'https://watch.idblog.eu.org/v5/?code='+Base64.decode(dataUrl[i]);
+	var tcoUrl = 'https://watch.idblog.eu.org/v5/?code='+Base64.decode(dataUrl[i]).replaceAll('%EF%BF%BD','');
 
  var data = tcoUrl;
  var mode = 'Auto'; var ecLevel = 'L'; var margin = '5'; var moduleSize = '8'; var hasEncodingHint = false;
@@ -28,7 +28,7 @@ function chooseBestModeData(data) {
  } catch (error) { alert(error.message); }	  
  var imgQR = '<img id="srcQR" class="srcQR" src="'+srcimgQR+'"></img>';
 	
-	var hasil  = '<tr><td>'+imgQR+'</td><td>Link '+(i+1)+' <a href="'+tcoUrl.replaceAll('%EF%BF%BD','')+'">OPEN LINK</a></td></tr>';	
+	var hasil  = '<tr><td>'+imgQR+'</td><td>Link '+(i+1)+' <a href="'+tcoUrl+'">OPEN LINK</a></td></tr>';	
 	posts += hasil;	
 	}
 	var postresult = '<table class="tableresult">'+posts+'</table>';
