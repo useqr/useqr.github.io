@@ -194,7 +194,8 @@ function ngonsole(categ){
 			var $newSpan = $('<span>');$newSpan.text(categ);
 			$(this).replaceWith($newSpan);
 		});     
-	  });                
+	  });    
+	(function(w,q){w[q]=w[q]||[];w[q].push(["_mgc.load"])})(window,"_mgq");
 } 	
 function getPosts(json) {
 	var 	categ;if(json.entry.category && json.entry.category.length > 0){categ = json.entry.category[0].term;}else{categ = "unlabeled";}
@@ -205,7 +206,7 @@ function getPosts(json) {
 
 var modifiedPost = posts;
 $("#RsltContnr").append(modifiedPost);document.title=title;document.body.style.backgroundImage = `url("${bgpos}")`;
-	gAnalytics(); ngonsole(categ); (function(w,q){w[q]=w[q]||[];w[q].push(["_mgc.load"])})(window,"_mgq");
+	gAnalytics(); ngonsole(categ); 
 };
 var scriptElement = document.createElement('script');scriptElement.src = `https://www.blogger.com/feeds/8044667158793505808/posts/default/${window.location.href.replace(/.+cle=/,"")}?alt=json-in-script&callback=getPosts`;document.head.appendChild(scriptElement);
 </script>	  
