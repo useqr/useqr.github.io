@@ -204,10 +204,8 @@ function getPosts(json) {
 		posts = `<h3>${title}</h3>${categ}<hr/>${cnten}`;
 	
 
-	var $elements = posts;var $imgElements = $elements.find('img');
-	var postWithScript = $imgElements.eq(1).after("<scr"+"ipt>console.log('image 2')</scr"+"ipt>");
-	$('#RsltContnr').append(postWithScript);
-	//document.getElementById('RsltContnr').innerHTML = posts;
+	console.log(cnten);
+	document.getElementById('RsltContnr').innerHTML = posts;
 	
 	document.title=title;document.body.style.backgroundImage = `url("${bgpos}")`;
 	gAnalytics(); ngonsole(categ);
