@@ -206,15 +206,10 @@ function getPosts(json) {
 		cnten = json.entry.content.$t,
 		bgpos = json.entry.media$thumbnail.url.replace(/\/s72.*/,"/w1920-h1080-n-rw/Images.webp").replace("/default","/hqdefault").replace(/=s72.+/,"=w1920-h1080-n-rw"),
 		posts = `<h3>${title}</h3>${categ}<hr/>${cnten}`;
-	//console.log(posts);
 	//document.getElementById('RsltContnr').innerHTML = posts;
-// Find the position of the first "</a>" tag
+
 var index = posts.indexOf("</a>");
-// Find the position of the first "<img>" tag after the "</a>" tag
-var imgIndex = posts.indexOf("<img>", index);
-// Insert the <div> element after the "</a>" tag but before the next "<img>" tag
-var modifiedPost = posts.slice(0, imgIndex) + "<div data-type=\"_mgwidget\" data-widget-id=\"1625955\"></div>" + posts.slice(imgIndex);
-// Append the modified post to the element with ID "RsltContnr" using jQuery's .append() method
+var modifiedPost = posts.slice(0, index) + "<div data-type=\"_mgwidget\" data-widget-id=\"1625955\"></div>" + posts.slice(index);
 $("#RsltContnr").append(modifiedPost);
 	
 	document.title=title;document.body.style.backgroundImage = `url("${bgpos}")`;
