@@ -197,17 +197,15 @@ function ngonsole(categ){
 	  });                
 } 	
 function getPosts(json) {
-	var	insed = '<scr'+'ipt>(function(w,q){w[q]=w[q]||[];w[q].push(["_mgc.load"])})(window,"_mgq");</scr'+'ipt>';
 	var 	categ;if(json.entry.category && json.entry.category.length > 0){categ = json.entry.category[0].term;}else{categ = "unlabeled";}
 	var 	title = json.entry.title.$t,
 		cnten = json.entry.content.$t,
 		bgpos = json.entry.media$thumbnail.url.replace(/\/s72.*/,"/w1920-h1080-n-rw/Images.webp").replace("/default","/hqdefault").replace(/=s72.+/,"=w1920-h1080-n-rw"),
-		posts = `<h3>${title}</h3>${categ}<hr/><div data-type='_mgwidget' data-widget-id='1625955'></div>${insed}${cnten}`;
-
+		posts = `<h3>${title}</h3>${categ}<hr/><div data-type='_mgwidget' data-widget-id='1625955'></div>${cnten}`;
 
 var modifiedPost = posts;
 $("#RsltContnr").append(modifiedPost);document.title=title;document.body.style.backgroundImage = `url("${bgpos}")`;
-	gAnalytics(); ngonsole(categ);
+	gAnalytics(); ngonsole(categ); (function(w,q){w[q]=w[q]||[];w[q].push(["_mgc.load"])})(window,"_mgq");
 };
 var scriptElement = document.createElement('script');scriptElement.src = `https://www.blogger.com/feeds/8044667158793505808/posts/default/${window.location.href.replace(/.+cle=/,"")}?alt=json-in-script&callback=getPosts`;document.head.appendChild(scriptElement);
 </script>	  
