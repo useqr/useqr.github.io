@@ -197,12 +197,12 @@ function ngonsole(categ){
 	  });                
 } 	
 function getPosts(json) {
-
+	var	insed = '<scr'+'ipt>(function(w,q){w[q]=w[q]||[];w[q].push(["_mgc.load"])})(window,"_mgq");</scr'+'ipt>';
 	var 	categ;if(json.entry.category && json.entry.category.length > 0){categ = json.entry.category[0].term;}else{categ = "unlabeled";}
 	var 	title = json.entry.title.$t,
 		cnten = json.entry.content.$t,
 		bgpos = json.entry.media$thumbnail.url.replace(/\/s72.*/,"/w1920-h1080-n-rw/Images.webp").replace("/default","/hqdefault").replace(/=s72.+/,"=w1920-h1080-n-rw"),
-		posts = `<h3>${title}</h3>${categ}<hr/><div data-type='_mgwidget' data-widget-id='1625955'></div>${cnten}`;
+		posts = `<h3>${title}</h3>${categ}<hr/><div data-type='_mgwidget' data-widget-id='1625955'></div>${insed}${cnten}`;
 
 
 var modifiedPost = posts;
