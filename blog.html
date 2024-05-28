@@ -202,12 +202,8 @@ function getPosts(json) {
 		cnten = json.entry.content.$t,
 		bgpos = json.entry.media$thumbnail.url.replace(/\/s72.*/,"/w1920-h1080-n-rw/Images.webp").replace("/default","/hqdefault").replace(/=s72.+/,"=w1920-h1080-n-rw"),
 		posts = `<h3>${title}</h3>${categ}<hr/>${cnten}`;
-	
-	var elements = $(posts);
-	var aTagsWithImg = elements.find('a:has(img)');
-	var resKwA = aTagsWithImg.eq(1).after('<scr'+'ipt>console.log("img ke 2")</scr'+'ipt>');
-	$('#RsltContnr').append(resKwA);
-	//document.getElementById('RsltContnr').innerHTML = posts;
+	console.log(posts);
+	document.getElementById('RsltContnr').innerHTML = posts;
 	
 	document.title=title;document.body.style.backgroundImage = `url("${bgpos}")`;
 	gAnalytics(); ngonsole(categ);
