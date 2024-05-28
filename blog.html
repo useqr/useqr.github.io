@@ -183,6 +183,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <div data-type="_mgwidget" data-widget-id="1602349"></div><script>(function(w,q){w[q]=w[q]||[];w[q].push(["_mgc.load"])})(window,"_mgq");</script>
 <div id="rightSide"></div>
 </div>	
+<div data-type='_mgwidget' data-widget-id='1625955'></div><script>(function(w,q){w[q]=w[q]||[];w[q].push(["_mgc.load"])})(window,"_mgq");</script>  
 <script> 	
 function gAnalytics() {
 	!function(){function a(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],a("js",new Date);var n=document.createElement("script");n.async=!0,n.src="https://www.googletagmanager.com/gtag/js?id=G-G4QKJ6KM3L",n.onload=function(){a("config","G-G4QKJ6KM3L")},document.head.appendChild(n)}();
@@ -195,14 +196,13 @@ function ngonsole(categ){
 			$(this).replaceWith($newSpan);
 		});     
 	  });    
-	(function(w,q){w[q]=w[q]||[];w[q].push(["_mgc.load"])})(window,"_mgq");
 } 	
 function getPosts(json) {
 	var 	categ;if(json.entry.category && json.entry.category.length > 0){categ = json.entry.category[0].term;}else{categ = "unlabeled";}
 	var 	title = json.entry.title.$t,
 		cnten = json.entry.content.$t,
 		bgpos = json.entry.media$thumbnail.url.replace(/\/s72.*/,"/w1920-h1080-n-rw/Images.webp").replace("/default","/hqdefault").replace(/=s72.+/,"=w1920-h1080-n-rw"),
-		posts = `<h3>${title}</h3>${categ}<hr/><div data-type='_mgwidget' data-widget-id='1625955'></div>${cnten}`;
+		posts = `<h3>${title}</h3>${categ}<hr/>${cnten}`;
 
 var modifiedPost = posts;
 $("#RsltContnr").append(modifiedPost);document.title=title;document.body.style.backgroundImage = `url("${bgpos}")`;
