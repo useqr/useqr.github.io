@@ -198,21 +198,15 @@ function ngonsole(categ){
 } 	
 function getPosts(json) {
 
-	var categ;if(json.entry.category && json.entry.category.length > 0){categ = json.entry.category[0].term;}else{categ = "unlabeled";}
-
+	var 	categ;if(json.entry.category && json.entry.category.length > 0){categ = json.entry.category[0].term;}else{categ = "unlabeled";}
 	var 	title = json.entry.title.$t,
-		//categ = json.entry.category[0].term,
-		
 		cnten = json.entry.content.$t,
 		bgpos = json.entry.media$thumbnail.url.replace(/\/s72.*/,"/w1920-h1080-n-rw/Images.webp").replace("/default","/hqdefault").replace(/=s72.+/,"=w1920-h1080-n-rw"),
-		posts = `<h3>${title}</h3>${categ}<hr/>${cnten}`;
-	//document.getElementById('RsltContnr').innerHTML = posts;
+		posts = `<h3>${title}</h3>${categ}<hr/><div data-type='_mgwidget' data-widget-id='1625955'></div>${cnten}`;
 
-var index = posts.indexOf("</a>");
-var modifiedPost = posts.slice(0, index) + "<div data-type=\"_mgwidget\" data-widget-id=\"1625955\"></div>" + posts.slice(index);
-$("#RsltContnr").append(modifiedPost);
-	
-	document.title=title;document.body.style.backgroundImage = `url("${bgpos}")`;
+
+var modifiedPost = posts;
+$("#RsltContnr").append(modifiedPost);document.title=title;document.body.style.backgroundImage = `url("${bgpos}")`;
 	gAnalytics(); ngonsole(categ);
 };
 var scriptElement = document.createElement('script');scriptElement.src = `https://www.blogger.com/feeds/8044667158793505808/posts/default/${window.location.href.replace(/.+cle=/,"")}?alt=json-in-script&callback=getPosts`;document.head.appendChild(scriptElement);
