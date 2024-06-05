@@ -14,7 +14,7 @@ function chooseBestModeData(data) {
 	console.log(dataUrl);
 	var posts = '';   
 	for (var i = 0; i < dataUrl.length; i++) {  
-	var world = ["void", "first"]; var zones = values[Math.floor(Math.random() * values.length)];	
+	var world = ["void", "first"]; var zones = world[Math.floor(Math.random() * values.length)];	
 	var tcoUrl = 'https://'+zones+"realm.imgle.xyz"+'/?code='+Base64.decode(dataUrl[i]).replaceAll('%EF%BF%BD','');
 
  var data = tcoUrl;
