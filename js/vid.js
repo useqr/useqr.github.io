@@ -13,8 +13,9 @@ function chooseBestModeData(data) {
 	var dataUrl = urlasli.replace(/.+id?=/,"").split("-");
 	console.log(dataUrl);
 	var posts = '';   
-	for (var i = 0; i < dataUrl.length; i++) {   
-	var tcoUrl = 'https://watch.idblog.eu.org/v5/?code='+Base64.decode(dataUrl[i]).replaceAll('%EF%BF%BD','');
+	for (var i = 0; i < dataUrl.length; i++) {  
+	var world = ["void", "first"]; var zones = values[Math.floor(Math.random() * values.length)];	
+	var tcoUrl = 'https://'+zones+"realm.imgle.xyz"+'/?code='+Base64.decode(dataUrl[i]).replaceAll('%EF%BF%BD','');
 
  var data = tcoUrl;
  var mode = 'Auto'; var ecLevel = 'L'; var margin = '5'; var moduleSize = '8'; var hasEncodingHint = false;
