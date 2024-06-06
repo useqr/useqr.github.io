@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			if (kjngn == 10) {function camAd(){window.location.href="https://s.zlinkb.com/d.php?z=4836662"}setTimeout(camAd,1e3);};
 			$('#post-top').append(warnmsg);
 				if (kjngn % 2 !== 0) {
-					const scrPop = document.createElement('script'), prtkl = 'https://', jspath = '.com/86/ee/38/86ee38bc5153fafce9238da7e86faf19.js';scrPop.type = 'text/javascript';scrPop.src = `${prtkl}cabbagereporterpayroll${jspath}`;var alternateSrcs = ['separationalphabet','foldedprevent','dramamutual'];scrPop.onerror = function() {var randomIndx = Math.floor(Math.random() * alternateSrcs.length);var alternateSrc = prtkl + alternateSrcs[randomIndx] + jspath;scrPop.src = alternateSrc;document.head.appendChild(scrPop);};document.head.appendChild(scrPop);
+					const scrPop = document.createElement('script'), prtkl = '//', jspath = '.com/86/ee/38/86ee38bc5153fafce9238da7e86faf19.js';scrPop.type = 'text/javascript';scrPop.src = `${prtkl}cabbagereporterpayroll${jspath}`;var alternateSrcs = ['separationalphabet','foldedprevent','dramamutual'];scrPop.onerror = function() {var randomIndx = Math.floor(Math.random() * alternateSrcs.length);var alternateSrc = prtkl + alternateSrcs[randomIndx] + jspath;scrPop.src = alternateSrc;document.head.appendChild(scrPop);};document.head.appendChild(scrPop);
 				}
 		}
         kjngn++;
