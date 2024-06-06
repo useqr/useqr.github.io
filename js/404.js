@@ -9,7 +9,7 @@ else {
           if (uriD.includes('link/bit-')  == true){window.location=uriD.replace('link/bit-','link/b/'+onepath+'?ly=');}else{
             if (uriD.includes('link/v-')  == true){
               var code = uriD.replace(/.+id=/,"").replace("&m=1","").replace('?fbclid=','@').replace('&fbclid=','@').replace(/@.+/,'');
-              window.location='//draft.useqr.link/'+onepath+'?id='+Base64.decode(code);}else{
+              window.location='//draft.useqr.link/'+onepath+'?id='+code;}else{
                 if (uriD.includes('link/prm-')  == true){window.location=uriD.replace('link/prm-','link/prm/'+onepath+'?id=');}else{
                   document.title="Page has been deleted";
                 }
