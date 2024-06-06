@@ -7,10 +7,12 @@ else {
       if (uriD.includes('link/+')  == true){window.location=uriD.replace('link/+','link/dsq/'+onepath+'?qs=');}else{
         if (uriD.includes('link/%20')  == true){window.location=uriD.replace('link/%20','link/dsq/'+onepath+'?qs=');}else{
           if (uriD.includes('link/bit-')  == true){window.location=uriD.replace('link/bit-','link/b/'+onepath+'?ly=');}else{
-            if (uriD.includes('link/v-')  == true){window.location=uriD.replace('link/v-','link/v/'+onepath+'?id=');}else{
-              if (uriD.includes('link/prm-')  == true){window.location=uriD.replace('link/prm-','link/prm/'+onepath+'?id=');}else{
-                document.title="Page has been deleted";
-              }
+            if (uriD.includes('link/v-')  == true){
+              var code = uriD.replace(/.+id=/,"").replace("&m=1","").replace('?fbclid=','@').replace('&fbclid=','@').replace(/@.+/,'');
+              window.location='//draft.useqr.link/'+onepath+'?id='+Base64.decode(code);}else{
+                if (uriD.includes('link/prm-')  == true){window.location=uriD.replace('link/prm-','link/prm/'+onepath+'?id=');}else{
+                  document.title="Page has been deleted";
+                }
             }
           }
         }
