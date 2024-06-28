@@ -12,10 +12,10 @@ function ngonsole(){
 			$(this).attr("href", "#");  		
 			$(this).attr("onclick", "window.open('https://watch.idblog.eu.org/p/go.html?m=1&download="+enc2linkdownloads+"');");	
 		});     
-		var world = ["void", "first"]; var zones = world[Math.floor(Math.random() * world.length)]+Base64.decode("cmVhbG0uaW1nbGUueHl6");
+		
             	var brTag = document.querySelector('br');
             	var aTag = document.createElement('a');
-            	aTag.setAttribute('href', `//${zones}/?code=${IdCode}`);
+            	aTag.setAttribute('href', `//draft.useqr.link/${IdCode}?id=${IdCode}`);
 		aTag.setAttribute('class', 'LN');  
             	aTag.innerHTML = 'NONTON';
             	
