@@ -5,7 +5,7 @@ const apiUrl = `//raw.githack.com/useqr/d/main/${IdCode}.json`, resultContainer 
 function ngonsole(){              
 	  $(document).ready(function(){                      				
 		$('a[href^="https://"]').each(function(){  			
-			var linkdownloads = $(this).attr("href").replace("streamtape.com","tapeadvertisement.com");             
+			var linkdownloads = $(this).attr("href").replace("streamtape.com","advertisertape.com");             
 			var enclinkdownloads = Base64.encode(linkdownloads);             
 			var enc2linkdownloads = Base64.encode(enclinkdownloads);              			
 			$(this).attr("style","margin:auto !important");    
